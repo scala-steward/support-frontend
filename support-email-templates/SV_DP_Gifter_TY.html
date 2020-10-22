@@ -105,6 +105,11 @@
       font-weight: 600;
     }
 
+    .full-wrap {
+      width: 100% !important;
+      min-width: 100% !important;
+    }
+
     /* Mobile styles */
     @media only screen and (max-device-width: 480px), only screen and (max-width: 480px) {
       .vw-100 {
@@ -161,15 +166,15 @@
                     <td>
                       <table width="100%" border="0" cellspacing="0" cellpadding="0">
                         <tr>
-                          <td style="padding: 25px 25px 0 25px;">
+                          <td style="padding-top: 16px;">
                             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                               <tr>
-                                <td style="font-size:40px; line-height:40px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding-bottom: 16px;">
+                                <td style="font-size:40px; line-height:40px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding: 0 12px 16px 12px;">
                                   <strong>You’re all set. Thank you</strong>
                                 </td>
                               </tr>
                               <tr>
-                                <td style="font-size:16px; line-height:18px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding-bottom: 16px;">
+                                <td style="font-size:16px; line-height:18px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding: 0 12px 16px 12px;">
                                   <strong>Hello {{name}},</strong>
                                   <br /><br />
                                   Your Digital Subscription order has been placed successfully.
@@ -178,85 +183,85 @@
                                 </td>
                               </tr>
                               <tr>
-                                <td class="fluid-img" style="font-size:0pt; line-height:0pt; text-align:left; padding-bottom: 8px;">
-                                  <img src="https://cdn.braze.eu/appboy/communication/assets/image_assets/images/5f6da9bd504ac5052c1c6e34/original.jpg?1601022397" width="600" height="21" border="0" alt="">
+                                <td class="fluid-img" style="font-size:0pt; line-height:0pt; text-align:left; padding: 0 12px 8px 12px;">
+                                  <img style="width: 100%;" src="https://cdn.braze.eu/appboy/communication/assets/image_assets/images/5f6da9bd504ac5052c1c6e34/original.jpg?1601022397" width="600" height="21" border="0" alt="">
                                 </td>
                               </tr>
                               <tr>
-                                <td style="font-size:20px; line-height:22px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding-bottom: 16px;">
+                                <td style="font-size:20px; line-height:22px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding: 0 12px 16px 12px;">
                                   <strong>Your gift</strong>
                                 </td>
                               </tr>
                               <tr>
-                                <td style="font-size:16px; line-height:18px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding-bottom: 16px;">
+                                <td style="font-size:16px; line-height:18px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding: 0 12px 16px 12px;">
                                   <strong>Gift recepient</strong>
                                 </td>
                               </tr>
                               <tr>
-                                <td style="font-size:16px; line-height:18px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding-bottom: 16px">
+                                <td style="font-size:16px; line-height:18px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding: 0 12px 16px 12px;">
                                   {{api_trigger_properties.${gift_recipient_first_name}}} {{api_trigger_properties.${gift_recipient_last_name}}}<br />
                                   {{api_trigger_properties.${gift_recipient_email}}}
                                 </td>
                               </tr>
                               {% if api_trigger_properties.${gift_personal_message} != blank %}
                               <tr>
-                                <td style="font-size:16px; line-height:18px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding-bottom: 16px;">
+                                <td style="font-size:16px; line-height:18px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding: 0 12px 16px 12px;">
                                   <strong>Personal message</strong>
                                 </td>
                               </tr>
                               <tr>
-                                <td style="font-size:16px; line-height:18px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding-bottom: 16px;">
+                                <td style="font-size:16px; line-height:18px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding: 0 12px 16px 12px;">
                                   {{api_trigger_properties.${gift_personal_message}}}
                                 </td>
                               </tr>
                               {% endif %}
                               <tr>
-                                <td style="font-size:16px; line-height:18px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding-bottom: 16px;">
+                                <td style="font-size:16px; line-height:18px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding: 0 12px 16px 12px;">
                                   <strong>Delivery date</strong>
                                 </td>
                               </tr>
                               <tr>
-                                <td style="font-size:16px; line-height:18px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding-bottom: 16px;">
+                                <td style="font-size:16px; line-height:18px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding: 0 12px 16px 12px;">
                                   {{api_trigger_properties.${gift_delivery_date}}}
                                 </td>
                               </tr>
                               <tr>
-                                <td class="fluid-img" style="font-size:0pt; line-height:0pt; text-align:left; padding-bottom: 8px;">
-                                  <img src="https://cdn.braze.eu/appboy/communication/assets/image_assets/images/5f6da9bd504ac5052c1c6e34/original.jpg?1601022397" width="600" height="21" border="0" alt="">
+                                <td class="fluid-img" style="font-size:0pt; line-height:0pt; text-align:left; padding: 0 12px 8px 12px;">
+                                  <img style="width: 100%;" src="https://cdn.braze.eu/appboy/communication/assets/image_assets/images/5f6da9bd504ac5052c1c6e34/original.jpg?1601022397" width="600" height="21" border="0" alt="">
                                 </td>
                               </tr>
                               <tr>
-                                <td style="font-size:20px; line-height:22px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding-bottom: 16px;">
+                                <td style="font-size:20px; line-height:22px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding: 0 12px 16px 12px;">
                                   <strong>Order summary</strong>
                                 </td>
                               </tr>
                               <tr>
-                                <td style="font-size:16px; line-height:18px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding-bottom: 16px;">
+                                <td style="font-size:16px; line-height:18px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding: 0 12px 16px 12px;">
                                   <strong>Name</strong>
                                 </td>
                               </tr>
                               <tr>
-                                <td style="font-size:16px; line-height:18px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding-bottom: 16px">
+                                <td style="font-size:16px; line-height:18px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding: 0 12px 16px 12px;">
                                   {{api_trigger_properties.${gifter_first_name}}} {{api_trigger_properties.${gifter_last_name}}}
                                 </td>
                               </tr>
                               <tr>
-                                <td style="font-size:16px; line-height:18px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding-bottom: 16px;">
+                                <td style="font-size:16px; line-height:18px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding: 0 12px 16px 12px;">
                                   <strong>Subscription details</strong>
                                 </td>
                               </tr>
                               <tr>
-                                <td style="font-size:16px; line-height:18px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding-bottom: 16px">
+                                <td style="font-size:16px; line-height:18px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding: 0 12px 16px 12px;">
                                   {{api_trigger_properties.${subscription_details}}}
                                 </td>
                               </tr>
                               <tr>
-                                <td style="font-size:16px; line-height:18px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding-bottom: 16px;">
+                                <td style="font-size:16px; line-height:18px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding: 0 12px 16px 12px;">
                                   <strong>Payment details</strong>
                                 </td>
                               </tr>
                               <tr>
-                                <td style="font-size:20px; line-height:24px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding-bottom: 16px;">
+                                <td style="font-size:20px; line-height:24px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding: 0 12px 16px 12px;">
                                   <table cellspacing="0" width="100%" cellpadding="0" border="0" style="table-layout: fixed; margin: 0px; padding: 0px; text-decoration: none; font-size: 16px; font-family: Georgia; font-style: normal; font-weight: 400; line-height: 21px; color: #052962;">
                                     <tr style="font-size:16px; line-height:24px;">
                                       <td width="150" align="left" valign="top">
@@ -314,22 +319,22 @@
                                 </td>
                               </tr>
                               <tr>
-                                <td style="font-size:16px; line-height:18px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding-bottom: 16px;">
+                                <td style="font-size:16px; line-height:18px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding: 0 12px 16px 12px;">
                                   <strong>Payment date</strong>
                                 </td>
                               </tr>
                               <tr>
-                                <td style="font-size:16px; line-height:18px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding-bottom: 16px">
+                                <td style="font-size:16px; line-height:18px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding: 0 12px 16px 12px;">
                                   {{api_trigger_properties.${date_of_first_payment}}}
                                 </td>
                               </tr>
                               <tr>
-                                <td style="font-size:16px; line-height:18px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding-bottom: 16px;">
+                                <td style="font-size:16px; line-height:18px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding: 0 12px 16px 12px;">
                                   <strong>What&rsquo;s included?</strong>
                                 </td>
                               </tr>
                               <tr>
-                                <td style="font-size:16px; line-height:18px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding-bottom: 16px;">
+                                <td style="font-size:16px; line-height:18px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding: 0 12px 16px 12px;">
                                   <ul style="list-style: none; margin: 0; padding: 0;">
                                     <li style="padding-left: 20px; margin-bottom: 6px;">
                                       <div style="display: inline-block; border-radius: 6px; height: 12px; width: 12px; margin-right: 8px; margin-left: -20px; background-color: #ffe500;"></div>The Guardian Editions app
@@ -350,7 +355,7 @@
                           <td bgcolor="#005689">
                             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                               <tr>
-                                <td style="padding: 25px">
+                                <td style="padding: 12px">
                                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                     <tr>
                                       <td valign="top">
@@ -416,7 +421,7 @@
 
                   <!-- Logo Bar -->
                   <tr>
-                    <td bgcolor="#052962" style="font-size:0pt; line-height:0pt; text-align:right; padding-top: 8px; padding-bottom: 8px; padding-left: 25px; padding-right: 25px;">
+                    <td bgcolor="#052962" style="font-size:0pt; line-height:0pt; text-align:right; padding-top: 8px; padding-bottom: 8px; padding-left: 12px; padding-right: 12px;">
                       <a href="https://www.theguardian.com" target="_blank"><img src="https://cdn.braze.eu/appboy/communication/assets/image_assets/images/5da8740a3f0da25849c7b32a/original.png?1571320842" width="50" height="50" border="0" alt="" /></a>
                     </td>
                   </tr>
@@ -424,7 +429,7 @@
 
                   <!-- Footer -->
                   <tr>
-                    <td style="font-size:16px; line-height:18px; color:#000001; font-family:'GH Guardian Headline', Georgia, serif; text-align:center; padding: 25px;">
+                    <td style="font-size:16px; line-height:18px; color:#000001; font-family:'GH Guardian Headline', Georgia, serif; text-align:center; padding: 12px;">
                       <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse; background-color: #ffffff; max-width: 600px;" bgcolor="#ffffff">
                         <tbody>
                           <tr>
