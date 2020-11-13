@@ -69,6 +69,13 @@
       font-weight: 700;
       font-style: normal;
     }
+
+    @font-face {
+      font-family: 'GT Guardian Titlepiece';
+      src: url('https://pasteup.guim.co.uk/webfonts/1.0.0/noalts-not-hinted/GTGuardianTitlepiece-Bold.woff2');
+      font-weight: 700;
+      font-style: normal;
+    }
   </style>
   <!--<![endif]-->
   <style type="text/css" media="screen">
@@ -187,52 +194,52 @@
                             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                               <tr>
                                 <td style="font-size:70px; line-height:80px; font-family: 'GT Guardian Titlepiece', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding: 0 12px 16px 12px;">
-                                  <strong>You&rsquo;re all set {{api_trigger_properties.${gift_recipient_first_name}}}</strong>
+                                  You&rsquo;re all set {{api_trigger_properties.${gift_recipient_first_name}}}
                                 </td>
                               </tr>
                               <tr>
-                                <td style="font-size:21px; line-height:30px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding: 0 12px 16px 12px;">
+                                <td style="font-size: 17px; line-height: 25px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#000000; padding: 0 12px 16px 12px;">
                                   Here are some important details about your subscription:
                                 </td>
                               </tr>
                               <tr>
-                                <td style="font-size:20px; line-height:22px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding: 0 12px 16px 12px;">
-                                  <table cellspacing="0" width="100%" cellpadding="0" border="0" style="margin: 0px; padding: 0px; text-decoration: none; font-size:21px; line-height:30px; font-family: Georgia; font-style: normal; font-weight: 400; color: #052962;">
-                                    <tr style="font-size:21px; line-height:30px;">
-                                      <td width="250" align="left" valign="top">
+                                <td style="font-size:20px; line-height:22px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color: #000000; padding: 0 12px 16px 12px;">
+                                  <table cellspacing="0" width="100%" cellpadding="0" border="0" style="margin: 0px; padding: 0px; text-decoration: none; font-size: 17px; line-height: 25px; font-family: Georgia; font-style: normal; font-weight: 400; color: #000000;">
+                                    <tr>
+                                      <td style="font-size: 17px; line-height: 25px; font-family: 'GH Guardian Headline Regular', Georgia, serif; font-weight: normal;" width="250" align="left" valign="top">
                                         Your gift subscription
                                       </td>
-                                      <td style="padding-left: 15px;" align="left" valign="top">
+                                      <td style="font-size: 17px; line-height: 25px; font-family: 'GH Guardian Headline Regular', Georgia, serif; font-weight: normal; padding-left: 15px;" align="left" valign="top">
                                         <strong>
                                           {{api_trigger_properties.${subscription_details}}}
                                         </strong>
                                       </td>
                                     </tr>
-                                    <tr style="font-size:21px; line-height:30px;">
-                                      <td width="250" align="left" valign="top">
+                                    <tr>
+                                      <td style="font-size: 17px; line-height: 25px; font-family: 'GH Guardian Headline Regular', Georgia, serif; font-weight: normal;" width="250" align="left" valign="top">
                                         Subscription start date
                                       </td>
-                                      <td style="padding-left: 15px;" align="left" valign="top">
+                                      <td style="font-size: 17px; line-height: 25px; font-family: 'GH Guardian Headline Regular', Georgia, serif; font-weight: normal; padding-left: 15px;" align="left" valign="top">
                                         <strong>
                                           {{api_trigger_properties.${gift_start_date}}}
                                         </strong>
                                       </td>
                                     </tr>
-                                    <tr style="font-size:21px; line-height:30px;">
-                                      <td width="250" align="left" valign="top">
+                                    <tr>
+                                      <td style="font-size: 17px; line-height: 25px; font-family: 'GH Guardian Headline Regular', Georgia, serif; font-weight: normal;" width="250" align="left" valign="top">
                                         Subscription end date
                                       </td>
-                                      <td style="padding-left: 15px;" align="left" valign="top">
+                                      <td style="font-size: 17px; line-height: 25px; font-family: 'GH Guardian Headline Regular', Georgia, serif; font-weight: normal; padding-left: 15px;" align="left" valign="top">
                                         <strong>
                                           {{api_trigger_properties.${gift_end_date}}}
                                         </strong>
                                       </td>
                                     </tr>
-                                    <tr style="font-size:21px; line-height:30px;">
-                                      <td width="250" align="left" valign="top">
+                                    <tr>
+                                      <td style="font-size: 17px; line-height: 25px; font-family: 'GH Guardian Headline Regular', Georgia, serif; font-weight: normal;" width="250" align="left" valign="top">
                                         Your email
                                       </td>
-                                      <td style="padding-left: 15px;" align="left" valign="top">
+                                      <td style="font-size: 17px; line-height: 25px; font-family: 'GH Guardian Headline Regular', Georgia, serif; font-weight: normal; padding-left: 15px;" align="left" valign="top">
                                         <strong>
                                           {{api_trigger_properties.${gift_recipient_email}}}
                                         </strong>
@@ -247,12 +254,12 @@
                                 </td>
                               </tr>
                               <tr>
-                                <td style="font-size:21px; line-height:26px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding: 0 12px 16px 12px;">
+                                <td style="font-size:21px; line-height:26px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#000000; padding: 0 12px 16px 12px;">
                                   <strong>What&rsquo;s included?</strong>
                                 </td>
                               </tr>
                               <tr>
-                                <td style="font-size:21px; line-height:30px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding: 0 12px 16px 12px;">
+                                <td style="font-size: 17px; line-height: 25px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#000000; padding: 0 12px 16px 12px;">
                                   <ul style="list-style: none; margin: 0; padding: 0;">
                                     <li style="padding-left: 20px; margin-bottom: 6px;">
                                       <div style="display: inline-block; border-radius: 6px; height: 12px; width: 12px; margin-right: 8px; margin-left: -20px; background-color: #ffe500;"></div>The Guardian Editions app
@@ -261,7 +268,7 @@
                                       <div style="display: inline-block; border-radius: 6px; height: 12px; width: 12px; margin-right: 8px; margin-left: -20px; background-color: #ffe500;"></div>Premium access to The Guardian Live app
                                     </li>
                                     <li style="padding-left: 20px; margin-bottom: 6px;">
-                                      <div style="display: inline-block; border-radius: 6px; height: 12px; width: 12px; margin-right: 8px; margin-left: -20px; background-color: #ffe500;"></div>Ad-free reading on theguardian.com
+                                      <div style="display: inline-block; border-radius: 6px; height: 12px; width: 12px; margin-right: 8px; margin-left: -20px; background-color: #ffe500;"></div>Ad-free reading on <a target="_blank" href="https://www.theguardian.com" style="color:#000000; text-decoration: underline;">theguardian.com</a>
                                     </li>
                                   </ul>
                                 </td>
@@ -277,12 +284,12 @@
                                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                     {% if {{custom_attribute.${region}}} == 'United Kingdom' %}
                                     <tr>
-                                      <td style="font-size:34px; line-height:44px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#ffffff; padding-bottom: 16px;">
+                                      <td style="font-size: 34px; line-height: 40px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#ffffff; padding-bottom: 16px;">
                                         <strong>Download The UK Daily in The Guardian Editions app</strong>
                                       </td>
                                     </tr>
                                     <tr>
-                                      <td style="font-size:21px; line-height:30px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#ffffff; padding-bottom: 26px;">
+                                      <td style="font-size: 17px; line-height: 25px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#ffffff; padding-bottom: 26px;">
                                         Experience The Guardian newspaper reimagined for mobile and tablet. Published daily and available to read by 6am (GMT).
 																				<br /><br />
 																				The Australia Weekend is also included in The Guardian Editions app as part of your subscription.
@@ -290,12 +297,12 @@
                                     </tr>
                                     {% elsif {{custom_attribute.${region}}} == 'Australia' %}
                                     <tr>
-                                      <td style="font-size:34px; line-height:44px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#ffffff; padding-bottom: 16px;">
+                                      <td style="font-size: 34px; line-height: 40px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#ffffff; padding-bottom: 16px;">
                                         <strong>Download Australia Weekend in the Guardian Editions app</strong>
                                       </td>
                                     </tr>
                                     <tr>
-                                      <td style="font-size:21px; line-height:30px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#ffffff; padding-bottom: 26px;">
+                                      <td style="font-size: 17px; line-height: 25px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#ffffff; padding-bottom: 26px;">
                                         Everything you need to make sense of the week, in one simple, elegant app. Published weekly, each edition available to read by 6am (AEST), every Saturday. The app allows you to download and read whenever it suits you.
 																				<br /><br />
 																				The UK Daily is also included as part of your subscription.
@@ -303,23 +310,23 @@
                                     </tr>
                                     {% elsif {{custom_attribute.${region}}} == 'United States' %}
                                     <tr>
-                                      <td style="font-size:34px; line-height:44px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#ffffff; padding-bottom: 16px;">
+                                      <td style="font-size: 34px; line-height: 40px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#ffffff; padding-bottom: 16px;">
                                         <strong>Download The Guardian Editions app</strong>
                                       </td>
                                     </tr>
                                     <tr>
-                                      <td style="font-size:21px; line-height:30px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#ffffff; padding-bottom: 26px;">
+                                      <td style="font-size: 17px; line-height: 25px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#ffffff; padding-bottom: 26px;">
                                         Everything you need to make sense of the week, in one simple, elegant app. The UK Daily and Australia edition are both included as part of your subscription.
                                       </td>
                                     </tr>
                                     {% else %}
                                     <tr>
-                                      <td style="font-size:34px; line-height:44px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#ffffff; padding-bottom: 16px;">
+                                      <td style="font-size: 34px; line-height: 40px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#ffffff; padding-bottom: 16px;">
                                         <strong>Download The UK Daily in The Guardian Editions app</strong>
                                       </td>
                                     </tr>
                                     <tr>
-                                      <td style="font-size:21px; line-height:30px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#ffffff; padding-bottom: 26px;">
+                                      <td style="font-size: 17px; line-height: 25px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#ffffff; padding-bottom: 26px;">
                                         Experience The Guardian newspaper reimagined for mobile and tablet. Published daily and available to read by 6am (GMT).
 																				<br /><br />
 																				The Australia Weekend is also included in The Guardian Editions app as part of your subscription.
@@ -336,12 +343,12 @@
                                       </td>
                                     </tr>
                                     <tr>
-                                      <td style="font-size:34px; line-height:44px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#ffffff; padding-bottom: 16px;">
+                                      <td style="font-size: 34px; line-height: 40px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#ffffff; padding-bottom: 16px;">
                                         <strong>Download The Live app</strong>
                                       </td>
                                     </tr>
                                     <tr>
-                                      <td style="font-size:21px; line-height:30px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#ffffff; padding-bottom: 26px;">
+                                      <td style="font-size: 17px; line-height: 25px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#ffffff; padding-bottom: 26px;">
                                         Sign in to the Live app to enjoy premium access. You&rsquo;ll be able to read all of our journalism completely ad-free and offline. You&rsquo;ll also have access to exclusive features Live and Discover.
                                       </td>
                                     </tr>
@@ -364,12 +371,12 @@
                                       </td>
                                     </tr>
                                     <tr>
-                                      <td style="font-size:34px; line-height:44px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#ffffff; padding-bottom: 16px;">
+                                      <td style="font-size: 34px; line-height: 40px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#ffffff; padding-bottom: 16px;">
                                         <strong>Sign into <a href="https://profile.theguardian.com/signin" style="color: #ffffff">theguardian.com</strong></a>
                                       </td>
                                     </tr>
                                     <tr>
-                                      <td style="font-size:21px; line-height:30px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#ffffff; padding-bottom: 26px;">
+                                      <td style="font-size: 17px; line-height: 25px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#ffffff; padding-bottom: 26px;">
                                         Never be interrupted or distracted by ads again by signing in. Just use your subscriber email and password when you next visit.
                                       </td>
                                     </tr>
@@ -383,8 +390,8 @@
                                       </td>
                                     </tr>
                                     <tr>
-                                      <td style="font-size:21px; line-height:30px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#ffffff;">
-                                        If you need any more information, please visit our <a href="https://www.theguardian.com/info/2014/aug/06/guardian-observer-digital-subscriptions-faq" style="color: #ffffff"><u>help page</u></a>
+                                      <td style="font-size: 17px; line-height: 25px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#ffffff;">
+                                        If you need any more information, please visit our <a target="_blank" href="https://www.theguardian.com/info/2014/aug/06/guardian-observer-digital-subscriptions-faq" style="color: #ffffff"><u>help page</u></a>
                                       </td>
                                     </tr>
                                   </table>
@@ -408,7 +415,7 @@
 
                   <!-- Footer -->
                   <tr>
-                    <td style="font-size:21px; line-height:30px; color:#000001; font-family:'GH Guardian Headline', Georgia, serif; text-align:center; padding: 12px;">
+                    <td style="font-size: 17px; line-height: 25px; color:#000001; font-family:'GH Guardian Headline', Georgia, serif; text-align:center; padding: 12px;">
                       <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse; background-color: #ffffff; max-width: 600px;" bgcolor="#ffffff">
                         <tbody>
                           <tr>
