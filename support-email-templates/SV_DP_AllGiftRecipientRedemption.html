@@ -169,13 +169,23 @@
                             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                               <tr>
                                 <td style="font-size:50px; line-height:58px; font-family: 'GT Guardian Titlepiece', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding: 0 12px 16px 12px;">
-                                  A gift for you from {{api_trigger_properties.${gifter_first_name}}} {{api_trigger_properties.${gifter_last_name}}}
+                                  A gift for you from {{api_trigger_properties.${gifter_first_name}}}
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="font-size: 17px; line-height: 25px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#000000; padding: 0 12px 16px 12px;">
+                                  {{api_trigger_properties.${gifter_first_name}}} {{api_trigger_properties.${gifter_last_name}}} has sent you a gift.
                                 </td>
                               </tr>
                               {% if api_trigger_properties.${gift_personal_message} != blank %}
                               <tr>
                                 <td class="fluid-img" style="font-size:0pt; line-height:0pt; text-align:left; padding: 0 12px 16px 12px;">
                                   <img style="width: 100%;" src="https://cdn.braze.eu/appboy/communication/assets/image_assets/images/5f6da9bd504ac5052c1c6e34/original.jpg?1601022397" width="600" height="21" border="0" alt="">
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="font-size: 17px; line-height: 25px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#000000; padding: 0 12px 16px 12px;">
+                                  <strong>A message from {{api_trigger_properties.${gifter_first_name}}} to you:</strong>
                                 </td>
                               </tr>
                               <tr>
@@ -213,9 +223,15 @@
                           <tr>
                             <td style="font-size: 17px; line-height: 25px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#ffffff; padding: 16px 12px 16px 12px;">
                               <ul style="list-style: none; margin: 0; padding: 0;">
+                                {% if {{custom_attribute.${region}}} == 'Australia' %}
+                                <li style="padding-left: 20px; margin-bottom: 6px;">
+                                  <div style="display: inline-block; border-radius: 6px; height: 12px; width: 12px; margin-right: 8px; margin-left: -20px; background-color: #ffe500;"></div>The Guardian Editions app, including Australia Weekend
+                                </li>
+                                {% else %}
                                 <li style="padding-left: 20px; margin-bottom: 6px;">
                                   <div style="display: inline-block; border-radius: 6px; height: 12px; width: 12px; margin-right: 8px; margin-left: -20px; background-color: #ffe500;"></div>The Guardian Editions app
                                 </li>
+                                {% endif %}
                                 <li style="padding-left: 20px; margin-bottom: 6px;">
                                   <div style="display: inline-block; border-radius: 6px; height: 12px; width: 12px; margin-right: 8px; margin-left: -20px; background-color: #ffe500;"></div>Premium access to The Guardian Live app
                                 </li>

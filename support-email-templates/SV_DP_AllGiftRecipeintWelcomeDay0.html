@@ -157,9 +157,7 @@
 
 <body style="padding:0 !important; margin:0 auto !important; display:block !important; min-width:100% !important; width:100% !important; background:#ffffff; -webkit-text-size-adjust:none;">
   {% if api_trigger_properties.${gift_recipient_first_name} == blank %}
-  {% assign name = 'supporter' %}
-  {% elsif api_trigger_properties.${gift_recipient_first_name}.size < 2 %}
-  {% assign name = 'supporter' %}
+  {% assign name = '' %}
   {% else %}
   {% assign name = api_trigger_properties.${gift_recipient_first_name} %}
   {% endif %}
@@ -194,7 +192,7 @@
                             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                               <tr>
                                 <td style="font-size:50px; line-height:58px; font-family: 'GT Guardian Titlepiece', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#052962; padding: 0 12px 16px 12px;">
-                                  You&rsquo;re all set {{api_trigger_properties.${gift_recipient_first_name}}}
+                                  You&rsquo;re all set {{name}}
                                 </td>
                               </tr>
                               <tr>
@@ -261,9 +259,15 @@
                               <tr>
                                 <td style="font-size: 17px; line-height: 25px; font-family:'GH Guardian Headline Regular', Georgia, serif; font-weight:normal; text-align:left; min-width:auto !important; color:#000000; padding: 0 12px 16px 12px;">
                                   <ul style="list-style: none; margin: 0; padding: 0;">
+                                    {% if {{custom_attribute.${region}}} == 'Australia' %}
+                                    <li style="padding-left: 20px; margin-bottom: 6px;">
+                                      <div style="display: inline-block; border-radius: 6px; height: 12px; width: 12px; margin-right: 8px; margin-left: -20px; background-color: #ffe500;"></div>The Guardian Editions app, including Australia Weekend
+                                    </li>
+                                    {% else %}
                                     <li style="padding-left: 20px; margin-bottom: 6px;">
                                       <div style="display: inline-block; border-radius: 6px; height: 12px; width: 12px; margin-right: 8px; margin-left: -20px; background-color: #ffe500;"></div>The Guardian Editions app
                                     </li>
+                                    {% endif %}
                                     <li style="padding-left: 20px; margin-bottom: 6px;">
                                       <div style="display: inline-block; border-radius: 6px; height: 12px; width: 12px; margin-right: 8px; margin-left: -20px; background-color: #ffe500;"></div>Premium access to The Guardian Live app
                                     </li>
