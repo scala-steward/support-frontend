@@ -304,6 +304,8 @@ function init(participations: Participations) {
     [key: string]: boolean
   }) => {
 
+    console.log('***', thirdPartyTrackingConsent);
+
     // Update vendorConsentsLookup value based on thirdPartyTrackingConsent
     vendorConsentsLookup = Object.keys(thirdPartyTrackingConsent).filter(vendorKey => thirdPartyTrackingConsent[vendorKey]).join(',');
 
