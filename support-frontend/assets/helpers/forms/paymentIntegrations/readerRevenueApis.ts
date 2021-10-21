@@ -207,15 +207,13 @@ export type PaymentAuthorisation =
 export type PaymentResult =
 	| {
 			paymentStatus: 'success';
-	  }
-	| {
-			paymentStatus: 'success';
-			subscriptionCreationPending: true;
+			subscriptionCreationPending?: true;
 	  }
 	| {
 			paymentStatus: 'failure';
 			error: ErrorReason;
 	  };
+
 // ----- Setup ----- //
 const PaymentSuccess: PaymentResult = {
 	paymentStatus: 'success',
