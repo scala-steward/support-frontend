@@ -4,8 +4,8 @@
             "TS1208": 1,
             "TS7053": 27,
             "TS7006": 164,
-            "TS2305": 64,
-            "TS2322": 303,
+            "TS2305": 63,
+            "TS2322": 302,
             "TS2724": 2,
             "TS2578": 35,
             "TS2307": 22,
@@ -136,7 +136,6 @@
             "assets/components/footerCompliant/Footer.tsx": 4,
             "assets/components/forms/customFields/error.tsx": 2,
             "assets/components/forms/customFields/options.tsx": 1,
-            "assets/components/forms/label.tsx": 2,
             "assets/components/generalErrorMessage/generalErrorMessage.tsx": 1,
             "assets/components/gridImage/gridImage.tsx": 1,
             "assets/components/headers/header/header.tsx": 7,
@@ -1196,10 +1195,6 @@
             "message": "Module '\"react\"' has no exported member 'Node'."
         },
         {
-            "path": "assets/components/forms/label.tsx",
-            "message": "Module '\"react\"' has no exported member 'Node'."
-        },
-        {
             "path": "assets/components/generalErrorMessage/generalErrorMessage.tsx",
             "message": "Module '\"react\"' has no exported member 'Node'."
         },
@@ -1464,10 +1459,6 @@
         {
             "path": "assets/components/forms/customFields/error.tsx",
             "message": "Type 'string | null' is not assignable to type 'string | undefined'."
-        },
-        {
-            "path": "assets/components/forms/label.tsx",
-            "message": "Type 'Option<string>' is not assignable to type 'string | undefined'."
         },
         {
             "path": "assets/components/headers/links/links.tsx",
@@ -4713,39 +4704,39 @@
     "TS7016": [
         {
             "path": "assets/components/paypalExpressButton/PayPalExpressButton.tsx",
-            "message": "Could not find a declaration file for module 'react-dom'. '/Users/imogen_hardy/code/support-frontend/support-frontend/node_modules/react-dom/index.js' implicitly has an 'any' type."
+            "message": "Could not find a declaration file for module 'react-dom'. '/Users/george_haberis/code/support-frontend/support-frontend/node_modules/react-dom/index.js' implicitly has an 'any' type."
         },
         {
             "path": "assets/helpers/abTests/abtest.ts",
-            "message": "Could not find a declaration file for module 'seedrandom'. '/Users/imogen_hardy/code/support-frontend/support-frontend/node_modules/seedrandom/index.js' implicitly has an 'any' type."
+            "message": "Could not find a declaration file for module 'seedrandom'. '/Users/george_haberis/code/support-frontend/support-frontend/node_modules/seedrandom/index.js' implicitly has an 'any' type."
         },
         {
             "path": "assets/helpers/productPrice/promotions.tsx",
-            "message": "Could not find a declaration file for module 'dompurify'. '/Users/imogen_hardy/code/support-frontend/support-frontend/node_modules/dompurify/dist/purify.cjs.js' implicitly has an 'any' type."
+            "message": "Could not find a declaration file for module 'dompurify'. '/Users/george_haberis/code/support-frontend/support-frontend/node_modules/dompurify/dist/purify.cjs.js' implicitly has an 'any' type."
         },
         {
             "path": "assets/helpers/rendering/render.ts",
-            "message": "Could not find a declaration file for module 'react-dom'. '/Users/imogen_hardy/code/support-frontend/support-frontend/node_modules/react-dom/index.js' implicitly has an 'any' type."
+            "message": "Could not find a declaration file for module 'react-dom'. '/Users/george_haberis/code/support-frontend/support-frontend/node_modules/react-dom/index.js' implicitly has an 'any' type."
         },
         {
             "path": "assets/helpers/rendering/render.ts",
-            "message": "Could not find a declaration file for module 'preact/debug'. '/Users/imogen_hardy/code/support-frontend/support-frontend/node_modules/preact/debug/dist/debug.js' implicitly has an 'any' type."
+            "message": "Could not find a declaration file for module 'preact/debug'. '/Users/george_haberis/code/support-frontend/support-frontend/node_modules/preact/debug/dist/debug.js' implicitly has an 'any' type."
         },
         {
             "path": "assets/helpers/rendering/ssrPages.ts",
-            "message": "Could not find a declaration file for module 'react-dom/server'. '/Users/imogen_hardy/code/support-frontend/support-frontend/node_modules/react-dom/server.js' implicitly has an 'any' type."
+            "message": "Could not find a declaration file for module 'react-dom/server'. '/Users/george_haberis/code/support-frontend/support-frontend/node_modules/react-dom/server.js' implicitly has an 'any' type."
         },
         {
             "path": "assets/helpers/tracking/googleTagManager.ts",
-            "message": "Could not find a declaration file for module 'uuid'. '/Users/imogen_hardy/code/support-frontend/support-frontend/node_modules/uuid/index.js' implicitly has an 'any' type."
+            "message": "Could not find a declaration file for module 'uuid'. '/Users/george_haberis/code/support-frontend/support-frontend/node_modules/uuid/index.js' implicitly has an 'any' type."
         },
         {
             "path": "assets/pages/contributions-landing/components/ContributionFormContainer.tsx",
-            "message": "Could not find a declaration file for module 'react-router-dom'. '/Users/imogen_hardy/code/support-frontend/support-frontend/node_modules/react-router-dom/index.js' implicitly has an 'any' type."
+            "message": "Could not find a declaration file for module 'react-router-dom'. '/Users/george_haberis/code/support-frontend/support-frontend/node_modules/react-router-dom/index.js' implicitly has an 'any' type."
         },
         {
             "path": "assets/pages/contributions-landing/contributionsLanding.tsx",
-            "message": "Could not find a declaration file for module 'react-router-dom'. '/Users/imogen_hardy/code/support-frontend/support-frontend/node_modules/react-router-dom/index.js' implicitly has an 'any' type."
+            "message": "Could not find a declaration file for module 'react-router-dom'. '/Users/george_haberis/code/support-frontend/support-frontend/node_modules/react-router-dom/index.js' implicitly has an 'any' type."
         }
     ],
     "TS2554": [
@@ -5631,7 +5622,7 @@
         },
         {
             "path": "assets/pages/contributions-landing/components/StripePaymentRequestButton/StripePaymentRequestButton.tsx",
-            "message": "Namespace '\"/Users/imogen_hardy/code/support-frontend/support-frontend/node_modules/@stripe/react-stripe-js/dist/react-stripe\"' has no exported member 'Stripe'."
+            "message": "Namespace '\"/Users/george_haberis/code/support-frontend/support-frontend/node_modules/@stripe/react-stripe-js/dist/react-stripe\"' has no exported member 'Stripe'."
         }
     ],
     "TS7022": [
