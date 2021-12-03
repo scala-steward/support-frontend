@@ -3,20 +3,19 @@ import { Elements } from '@stripe/react-stripe-js';
 import * as React from 'react';
 import AnimatedDots from 'components/spinners/animatedDots';
 import type { ContributionType } from 'helpers/contributions';
+import { useStripeObjects } from 'helpers/customHooks/useStripeObjects';
 import type { PaymentMethod } from 'helpers/forms/paymentMethods';
 import { Stripe } from 'helpers/forms/paymentMethods';
 import {
 	getStripeKey,
 	stripeAccountForContributionType,
-	useStripeObjects,
 } from 'helpers/forms/stripe';
 import type { IsoCountry } from 'helpers/internationalisation/country';
 import type { IsoCurrency } from 'helpers/internationalisation/currency';
 import StripeCardForm from './StripeCardForm';
 import './stripeCardForm.scss';
-// ----- Types -----//
 
-/* eslint-disable react/no-unused-prop-types */
+// ----- Types -----//
 type PropTypes = {
 	country: IsoCountry;
 	currency: IsoCurrency;
@@ -25,7 +24,7 @@ type PropTypes = {
 	paymentMethod: PaymentMethod;
 };
 
-const StripeCardFormContainer = (props: PropTypes) => {
+function StripeCardFormContainer(props: PropTypes): JSX.Element | null {
 	const stripeAccount =
 		stripeAccountForContributionType[props.contributionType];
 	const stripeKey = getStripeKey(
@@ -34,9 +33,10 @@ const StripeCardFormContainer = (props: PropTypes) => {
 		props.isTestUser,
 	);
 	const stripeObjects = useStripeObjects(stripeAccount, stripeKey);
+	const maybeStripeSDK = stripeObjects[stripeAccount];
 
 	if (props.paymentMethod === Stripe) {
-		if (stripeObjects[stripeAccount]) {
+		if (maybeStripeSDK) {
 			// `options` must be set even if it's empty, otherwise we get 'Unsupported prop change on Elements' warnings
 			// in the console
 			const elementsOptions = {};
@@ -47,14 +47,8 @@ const StripeCardFormContainer = (props: PropTypes) => {
 			 */
 			return (
 				<div className="stripe-card-element-container" key={stripeAccount}>
-					<Elements
-						stripe={stripeObjects[stripeAccount]}
-						options={elementsOptions}
-					>
-						<StripeCardForm
-							stripeKey={stripeKey}
-							isTestUser={props.isTestUser}
-						/>
+					<Elements stripe={maybeStripeSDK} options={elementsOptions}>
+						<StripeCardForm stripeKey={stripeKey} />
 					</Elements>
 				</div>
 			);
@@ -64,6 +58,6 @@ const StripeCardFormContainer = (props: PropTypes) => {
 	}
 
 	return null;
-};
+}
 
 export default StripeCardFormContainer;

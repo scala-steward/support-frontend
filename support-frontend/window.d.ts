@@ -1,5 +1,5 @@
 import type { Participations } from 'helpers/abTests/abtest';
-import type { StripeKey } from 'helpers/forms/stripe';
+import type { StripeKeysForLocale } from 'helpers/forms/stripe';
 import type { ProductPrices } from './assets/helpers/productPrice/productPrices';
 
 declare global {
@@ -24,9 +24,9 @@ declare global {
 				default: string;
 				uat: string;
 			};
-			stripeKeyAustralia: StripeKey;
-			stripeKeyUnitedStates: StripeKey;
-			stripeKeyDefaultCurrencies: StripeKey;
+			stripeKeyAustralia: StripeKeysForLocale;
+			stripeKeyDefaultCurrencies: StripeKeysForLocale;
+			stripeKeyUnitedStates: StripeKeysForLocale;
 		};
 		enablePayPalButton?: () => void;
 		disablePayPalButton?: () => void;

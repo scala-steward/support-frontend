@@ -3,7 +3,7 @@
         "byCode": {
             "TS1208": 1,
             "TS2305": 51,
-            "TS2322": 183,
+            "TS2322": 182,
             "TS2578": 16,
             "TS2339": 67,
             "TS7006": 94,
@@ -134,7 +134,6 @@
             "assets/pages/contributions-landing/components/ContributionTextInput.tsx": 8,
             "assets/pages/contributions-landing/components/PaymentMethodSelector.tsx": 10,
             "assets/pages/contributions-landing/components/SepaForm.tsx": 7,
-            "assets/pages/contributions-landing/components/StripeCardForm/StripeCardFormContainer.tsx": 1,
             "assets/pages/contributions-landing/contributionsLandingReducer.ts": 5,
             "assets/pages/digital-subscription-checkout/components/digitalCheckoutForm.test.tsx": 9,
             "assets/pages/digital-subscription-checkout/components/digitalCheckoutForm.tsx": 6,
@@ -944,10 +943,6 @@
             "message": "Type 'string | null' is not assignable to type 'string | undefined'."
         },
         {
-            "path": "assets/pages/contributions-landing/components/StripeCardForm/StripeCardFormContainer.tsx",
-            "message": "Type '{ stripeKey: string; isTestUser: boolean; }' is not assignable to type 'IntrinsicAttributes & Omit<{ contributionType: keyof RegularContributionTypeMap<null> | \"ONE_OFF\"; checkoutFormHasBeenSubmitted: boolean; ... 9 more ...; isTestUser: boolean; } & { ...; } & { ...; }, \"country\" | ... 19 more ... | \"setStripeRecurringRecaptchaVerified\">'."
-        },
-        {
             "path": "assets/pages/contributions-landing/contributionsLandingReducer.ts",
             "message": "Type '{ Stripe: null; AmazonPay: null; }' is not assignable to type '{ Stripe: StripeHandler | null; }'."
         },
@@ -957,7 +952,7 @@
         },
         {
             "path": "assets/pages/contributions-landing/contributionsLandingReducer.ts",
-            "message": "Type '{ contributionType: keyof RegularContributionTypeMap<null> | \"ONE_OFF\"; showOtherAmount: boolean; formData: { otherAmounts: OtherAmounts; ... 5 more ...; email: string | null; }; ... 17 more ...; oneOffRecaptchaToken: string | null; }' is not assignable to type 'FormState'."
+            "message": "Type '{ contributionType: \"ONE_OFF\" | keyof RegularContributionTypeMap<null>; showOtherAmount: boolean; formData: { otherAmounts: OtherAmounts; ... 5 more ...; email: string | null; }; ... 17 more ...; oneOffRecaptchaToken: string | null; }' is not assignable to type 'FormState'."
         },
         {
             "path": "assets/pages/digital-subscription-checkout/components/digitalCheckoutForm.test.tsx",
@@ -1337,11 +1332,11 @@
         },
         {
             "path": "assets/helpers/csrf/csrfReducer.ts",
-            "message": "Property 'csrf' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyDefaultCurrencies: StripeKey; }'."
+            "message": "Property 'csrf' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyUnitedStates: StripeKeysForLocale; }'."
         },
         {
             "path": "assets/helpers/csrf/csrfReducer.ts",
-            "message": "Property 'csrf' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyDefaultCurrencies: StripeKey; }'."
+            "message": "Property 'csrf' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyUnitedStates: StripeKeysForLocale; }'."
         },
         {
             "path": "assets/helpers/forms/existingPaymentMethods/existingPaymentMethods.ts",
@@ -1349,11 +1344,11 @@
         },
         {
             "path": "assets/helpers/forms/paymentIntegrations/amazonPay.ts",
-            "message": "Property 'amazonPayClientId' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyDefaultCurrencies: StripeKey; }'."
+            "message": "Property 'amazonPayClientId' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyUnitedStates: StripeKeysForLocale; }'."
         },
         {
             "path": "assets/helpers/forms/paymentIntegrations/amazonPay.ts",
-            "message": "Property 'amazonPayClientId' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyDefaultCurrencies: StripeKey; }'."
+            "message": "Property 'amazonPayClientId' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyUnitedStates: StripeKeysForLocale; }'."
         },
         {
             "path": "assets/helpers/forms/paymentIntegrations/amazonPay.ts",
@@ -1389,19 +1384,19 @@
         },
         {
             "path": "assets/helpers/forms/paymentIntegrations/oneOffContributions.ts",
-            "message": "Property 'paymentApiUrl' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyDefaultCurrencies: StripeKey; }'."
+            "message": "Property 'paymentApiUrl' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyUnitedStates: StripeKeysForLocale; }'."
         },
         {
             "path": "assets/helpers/forms/paymentIntegrations/oneOffContributions.ts",
-            "message": "Property 'paymentApiPayPalEndpoint' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyDefaultCurrencies: StripeKey; }'."
+            "message": "Property 'paymentApiPayPalEndpoint' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyUnitedStates: StripeKeysForLocale; }'."
         },
         {
             "path": "assets/helpers/forms/paymentIntegrations/payPalRecurringCheckout.ts",
-            "message": "Property 'payPalEnvironment' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyDefaultCurrencies: StripeKey; }'."
+            "message": "Property 'payPalEnvironment' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyUnitedStates: StripeKeysForLocale; }'."
         },
         {
             "path": "assets/helpers/forms/paymentIntegrations/payPalRecurringCheckout.ts",
-            "message": "Property 'payPalEnvironment' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyDefaultCurrencies: StripeKey; }'."
+            "message": "Property 'payPalEnvironment' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyUnitedStates: StripeKeysForLocale; }'."
         },
         {
             "path": "assets/helpers/forms/paymentIntegrations/payPalRecurringCheckout.ts",
@@ -1417,75 +1412,75 @@
         },
         {
             "path": "assets/helpers/rendering/render.ts",
-            "message": "Property 'settings' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyDefaultCurrencies: StripeKey; }'."
+            "message": "Property 'settings' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyUnitedStates: StripeKeysForLocale; }'."
         },
         {
             "path": "assets/helpers/rendering/render.ts",
-            "message": "Property 'settings' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyDefaultCurrencies: StripeKey; }'."
+            "message": "Property 'settings' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyUnitedStates: StripeKeysForLocale; }'."
         },
         {
             "path": "assets/helpers/user/user.ts",
-            "message": "Property 'user' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyDefaultCurrencies: StripeKey; }'."
+            "message": "Property 'user' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyUnitedStates: StripeKeysForLocale; }'."
         },
         {
             "path": "assets/helpers/user/user.ts",
-            "message": "Property 'user' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyDefaultCurrencies: StripeKey; }'."
+            "message": "Property 'user' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyUnitedStates: StripeKeysForLocale; }'."
         },
         {
             "path": "assets/helpers/user/user.ts",
-            "message": "Property 'user' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyDefaultCurrencies: StripeKey; }'."
+            "message": "Property 'user' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyUnitedStates: StripeKeysForLocale; }'."
         },
         {
             "path": "assets/helpers/user/user.ts",
-            "message": "Property 'uatMode' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyDefaultCurrencies: StripeKey; }'."
+            "message": "Property 'uatMode' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyUnitedStates: StripeKeysForLocale; }'."
         },
         {
             "path": "assets/helpers/user/user.ts",
-            "message": "Property 'user' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyDefaultCurrencies: StripeKey; }'."
+            "message": "Property 'user' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyUnitedStates: StripeKeysForLocale; }'."
         },
         {
             "path": "assets/helpers/user/user.ts",
-            "message": "Property 'email' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyDefaultCurrencies: StripeKey; }'."
+            "message": "Property 'email' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyUnitedStates: StripeKeysForLocale; }'."
         },
         {
             "path": "assets/helpers/user/user.ts",
-            "message": "Property 'email' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyDefaultCurrencies: StripeKey; }'."
+            "message": "Property 'email' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyUnitedStates: StripeKeysForLocale; }'."
         },
         {
             "path": "assets/helpers/user/user.ts",
-            "message": "Property 'user' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyDefaultCurrencies: StripeKey; }'."
+            "message": "Property 'user' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyUnitedStates: StripeKeysForLocale; }'."
         },
         {
             "path": "assets/helpers/user/user.ts",
-            "message": "Property 'user' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyDefaultCurrencies: StripeKey; }'."
+            "message": "Property 'user' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyUnitedStates: StripeKeysForLocale; }'."
         },
         {
             "path": "assets/helpers/user/user.ts",
-            "message": "Property 'user' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyDefaultCurrencies: StripeKey; }'."
+            "message": "Property 'user' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyUnitedStates: StripeKeysForLocale; }'."
         },
         {
             "path": "assets/helpers/user/user.ts",
-            "message": "Property 'user' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyDefaultCurrencies: StripeKey; }'."
+            "message": "Property 'user' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyUnitedStates: StripeKeysForLocale; }'."
         },
         {
             "path": "assets/helpers/user/user.ts",
-            "message": "Property 'user' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyDefaultCurrencies: StripeKey; }'."
+            "message": "Property 'user' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyUnitedStates: StripeKeysForLocale; }'."
         },
         {
             "path": "assets/helpers/user/user.ts",
-            "message": "Property 'user' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyDefaultCurrencies: StripeKey; }'."
+            "message": "Property 'user' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyUnitedStates: StripeKeysForLocale; }'."
         },
         {
             "path": "assets/helpers/user/user.ts",
-            "message": "Property 'user' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyDefaultCurrencies: StripeKey; }'."
+            "message": "Property 'user' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyUnitedStates: StripeKeysForLocale; }'."
         },
         {
             "path": "assets/helpers/user/user.ts",
-            "message": "Property 'user' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyDefaultCurrencies: StripeKey; }'."
+            "message": "Property 'user' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyUnitedStates: StripeKeysForLocale; }'."
         },
         {
             "path": "assets/helpers/utilities/logger.ts",
-            "message": "Property 'gitCommitId' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyDefaultCurrencies: StripeKey; }'."
+            "message": "Property 'gitCommitId' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyUnitedStates: StripeKeysForLocale; }'."
         },
         {
             "path": "assets/pages/aus-moment-map/components/testimonialsContainer.tsx",
@@ -1509,15 +1504,15 @@
         },
         {
             "path": "assets/pages/contributions-landing/contributionsLanding.tsx",
-            "message": "Property 'polyfillScriptLoaded' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyDefaultCurrencies: StripeKey; }'."
+            "message": "Property 'polyfillScriptLoaded' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyUnitedStates: StripeKeysForLocale; }'."
         },
         {
             "path": "assets/pages/contributions-landing/contributionsLanding.tsx",
-            "message": "Property 'polyfillVersion' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyDefaultCurrencies: StripeKey; }'."
+            "message": "Property 'polyfillVersion' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyUnitedStates: StripeKeysForLocale; }'."
         },
         {
             "path": "assets/pages/contributions-landing/contributionsLanding.tsx",
-            "message": "Property 'polyfillVersion' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyDefaultCurrencies: StripeKey; }'."
+            "message": "Property 'polyfillVersion' does not exist on type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyUnitedStates: StripeKeysForLocale; }'."
         },
         {
             "path": "assets/pages/digital-subscription-checkout/thankYouContainer.ts",
@@ -2329,7 +2324,7 @@
         },
         {
             "path": "assets/pages/contributions-landing/components/ContributionFormFields.tsx",
-            "message": "Argument of type '(props: PropTypes) => Element' is not assignable to parameter of type 'ComponentType<Matching<{ firstName: string | null; lastName: string | null; email: string | null; checkoutFormHasBeenSubmitted: boolean; billingState: string | null; isSignedIn: boolean; contributionType: keyof RegularContributionTypeMap<...> | \"ONE_OFF\"; } & { ...; }, PropTypes>>'."
+            "message": "Argument of type '(props: PropTypes) => Element' is not assignable to parameter of type 'ComponentType<Matching<{ firstName: string | null; lastName: string | null; email: string | null; checkoutFormHasBeenSubmitted: boolean; billingState: string | null; isSignedIn: boolean; contributionType: \"ONE_OFF\" | keyof RegularContributionTypeMap<...>; } & { ...; }, PropTypes>>'."
         },
         {
             "path": "assets/pages/contributions-landing/components/ContributionState.tsx",
@@ -2337,7 +2332,7 @@
         },
         {
             "path": "assets/pages/contributions-landing/components/ContributionSubmit.tsx",
-            "message": "Argument of type '(props: PropTypes) => Element' is not assignable to parameter of type 'ComponentType<Matching<{ currency: IsoCurrency; contributionType: keyof RegularContributionTypeMap<null> | \"ONE_OFF\"; isWaiting: boolean; paymentMethod: PaymentMethod; ... 9 more ...; amazonPayData: AmazonPayData; } & { ...; }, PropTypes>>'."
+            "message": "Argument of type '(props: PropTypes) => Element' is not assignable to parameter of type 'ComponentType<Matching<{ currency: IsoCurrency; contributionType: \"ONE_OFF\" | keyof RegularContributionTypeMap<null>; isWaiting: boolean; paymentMethod: PaymentMethod; ... 9 more ...; amazonPayData: AmazonPayData; } & { ...; }, PropTypes>>'."
         },
         {
             "path": "assets/pages/contributions-landing/components/ContributionTypeTabs.tsx",
@@ -2345,7 +2340,7 @@
         },
         {
             "path": "assets/pages/contributions-landing/components/PaymentMethodSelector.tsx",
-            "message": "Argument of type '(props: PropTypes) => Element' is not assignable to parameter of type 'ComponentType<Matching<{ countryId: string; countryGroupId: CountryGroupId; currency: IsoCurrency; contributionType: keyof RegularContributionTypeMap<null> | \"ONE_OFF\"; ... 7 more ...; checkoutFormHasBeenSubmitted: boolean; } & { ...; }, PropTypes>>'."
+            "message": "Argument of type '(props: PropTypes) => Element' is not assignable to parameter of type 'ComponentType<Matching<{ countryId: string; countryGroupId: CountryGroupId; currency: IsoCurrency; contributionType: \"ONE_OFF\" | keyof RegularContributionTypeMap<null>; ... 7 more ...; checkoutFormHasBeenSubmitted: boolean; } & { ...; }, PropTypes>>'."
         },
         {
             "path": "assets/pages/contributions-landing/components/StripeCardForm/StripeCardForm.tsx",
@@ -2361,7 +2356,7 @@
         },
         {
             "path": "assets/pages/contributions-landing/contributionsLandingInit.ts",
-            "message": "Argument of type 'string' is not assignable to parameter of type 'keyof RegularContributionTypeMap<null> | \"ONE_OFF\"'."
+            "message": "Argument of type 'string' is not assignable to parameter of type '\"ONE_OFF\" | keyof RegularContributionTypeMap<null>'."
         },
         {
             "path": "assets/pages/digital-subscription-checkout/components/digitalCheckoutForm.test.tsx",
@@ -2467,7 +2462,7 @@
         },
         {
             "path": "assets/helpers/globalsAndSwitches/globals.ts",
-            "message": "Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyDefaultCurrencies: StripeKey; }'."
+            "message": "Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ mdapiUrl: string; serversideTests?: Participations | null | undefined; enableContributionsCampaign: boolean; forceContributionsCampaign: boolean; v2recaptchaPublicKey: string; ... 7 more ...; stripeKeyUnitedStates: StripeKeysForLocale; }'."
         },
         {
             "path": "assets/pages/aus-moment-map/components/testimonialsContainer.tsx",
@@ -2951,7 +2946,7 @@
         },
         {
             "path": "assets/pages/contributions-landing/contributionsLandingReducer.ts",
-            "message": "Type '{}' is missing the following properties from type 'SelectedAmounts': MONTHLY, ANNUAL, ONE_OFF"
+            "message": "Type '{}' is missing the following properties from type 'SelectedAmounts': ONE_OFF, MONTHLY, ANNUAL"
         },
         {
             "path": "assets/pages/paper-subscription-checkout/components/thankYou.tsx",

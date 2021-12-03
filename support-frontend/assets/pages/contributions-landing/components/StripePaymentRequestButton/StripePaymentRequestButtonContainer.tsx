@@ -8,10 +8,10 @@ import type {
 	SelectedAmounts,
 } from 'helpers/contributions';
 import { getAmount } from 'helpers/contributions';
+import { useStripeObjects } from 'helpers/customHooks/useStripeObjects';
 import {
 	getStripeKey,
 	stripeAccountForContributionType,
-	useStripeObjects,
 } from 'helpers/forms/stripe';
 import type { IsoCountry } from 'helpers/internationalisation/country';
 import { isInStripePaymentRequestAllowedCountries } from 'helpers/internationalisation/country';
