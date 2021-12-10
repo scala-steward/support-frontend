@@ -17,9 +17,11 @@ export type ExistingPaymentMethodSubscription = {
 };
 type ExistingPaymentType = 'Card' | 'DirectDebit';
 export type NotRecentlySignedInExistingPaymentMethod = {
+	type: 'NotRecentlySignedIn';
 	paymentType: ExistingPaymentType;
 };
 export type RecentlySignedInExistingPaymentMethod = {
+	type: 'RecentlySignedIn';
 	paymentType: ExistingPaymentType;
 	billingAccountId: string;
 	subscriptions: ExistingPaymentMethodSubscription[];
@@ -33,8 +35,8 @@ export type ExistingPaymentMethod =
 // ----- Functions ----- //
 function isUsableExistingPaymentMethod(
 	existingPaymentMethod: ExistingPaymentMethod,
-): boolean {
-	return !!existingPaymentMethod.billingAccountId;
+): existingPaymentMethod is RecentlySignedInExistingPaymentMethod {
+	return existingPaymentMethod.type == 'RecentlySignedIn';
 }
 
 function sendGetExistingPaymentMethodsRequest(

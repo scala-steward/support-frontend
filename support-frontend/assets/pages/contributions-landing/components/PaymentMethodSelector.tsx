@@ -1,5 +1,6 @@
 // ----- Imports ----- //
 import { css } from '@emotion/core';
+import { Radio, RadioGroup } from '@guardian/src-radio';
 import React from 'react';
 import { connect } from 'react-redux';
 import GeneralErrorMessage from 'components/generalErrorMessage/generalErrorMessage';
@@ -9,38 +10,13 @@ import SvgAmazonPayLogoDs from 'components/svgs/amazonPayLogoDs';
 import SvgDirectDebitSymbolDs from 'components/svgs/directDebitSymbolDs';
 import SvgNewCreditCardDs from 'components/svgs/newCreditCardDs';
 import SvgPayPalDs from 'components/svgs/paypalDs';
+import SvgSepa from 'components/svgs/sepa';
 import { contributionTypeIsRecurring } from 'helpers/contributions';
+import type { ContributionType } from 'helpers/contributions';
 import {
 	getPaymentLabel,
 	getValidPaymentMethods,
 } from 'helpers/forms/checkouts';
-import type { Switches } from 'helpers/globalsAndSwitches/settings';
-import 'helpers/globalsAndSwitches/settings';
-import type { ContributionType } from 'helpers/contributions';
-import type { IsoCountry } from 'helpers/internationalisation/country';
-import { classNameWithModifiers } from 'helpers/utilities/utilities';
-import 'helpers/internationalisation/country';
-import type { IsoCurrency } from 'helpers/internationalisation/currency';
-import 'helpers/internationalisation/currency';
-import type { State } from '../contributionsLandingReducer';
-import '../contributionsLandingReducer';
-import type { PaymentMethod } from 'helpers/forms/paymentMethods';
-import {
-	AmazonPay,
-	DirectDebit,
-	ExistingCard,
-	ExistingDirectDebit,
-	PayPal,
-	Sepa,
-	Stripe,
-} from 'helpers/forms/paymentMethods';
-import type { Action } from '../contributionsLandingActions';
-import {
-	loadAmazonPaySdk,
-	loadPayPalExpressSdk,
-	updatePaymentMethod,
-	updateSelectedExistingPaymentMethod,
-} from '../contributionsLandingActions';
 import {
 	getExistingPaymentMethodLabel,
 	isUsableExistingPaymentMethod,
@@ -52,14 +28,33 @@ import type {
 	ExistingPaymentMethod,
 	RecentlySignedInExistingPaymentMethod,
 } from 'helpers/forms/existingPaymentMethods/existingPaymentMethods';
-import { getReauthenticateUrl } from 'helpers/urls/externalLinks';
-import { Radio, RadioGroup } from '@guardian/src-radio';
-import SvgSepa from 'components/svgs/sepa';
+import type { PaymentMethod } from 'helpers/forms/paymentMethods';
+import {
+	AmazonPay,
+	DirectDebit,
+	ExistingCard,
+	ExistingDirectDebit,
+	PayPal,
+	Sepa,
+	Stripe,
+} from 'helpers/forms/paymentMethods';
+import type { Switches } from 'helpers/globalsAndSwitches/settings';
+import type { IsoCountry } from 'helpers/internationalisation/country';
 import type { CountryGroupId } from 'helpers/internationalisation/countryGroup';
+import type { IsoCurrency } from 'helpers/internationalisation/currency';
+import { getReauthenticateUrl } from 'helpers/urls/externalLinks';
+import { classNameWithModifiers } from 'helpers/utilities/utilities';
+import {
+	loadAmazonPaySdk,
+	loadPayPalExpressSdk,
+	updatePaymentMethod,
+	updateSelectedExistingPaymentMethod,
+} from '../contributionsLandingActions';
+import type { State } from '../contributionsLandingReducer';
 import ContributionChoicesHeader from './ContributionChoicesHeader';
+
 // ----- Types ----- //
 
-/* eslint-disable react/no-unused-prop-types */
 type PropTypes = {
 	countryId: IsoCountry;
 	countryGroupId: CountryGroupId;
@@ -68,27 +63,22 @@ type PropTypes = {
 	existingPaymentMethods: ExistingPaymentMethod[] | typeof undefined;
 	paymentMethod: PaymentMethod;
 	existingPaymentMethod: RecentlySignedInExistingPaymentMethod;
-	updatePaymentMethod: (
-		arg0: PaymentMethod,
-	) => (arg0: (...args: any[]) => any) => void;
+	updatePaymentMethod: (paymentMethod: PaymentMethod) => void;
 	updateSelectedExistingPaymentMethod: (
-		arg0: RecentlySignedInExistingPaymentMethod | typeof undefined,
-	) => Action;
+		existingPaymentMethod?: RecentlySignedInExistingPaymentMethod,
+	) => void;
 	isTestUser: boolean;
 	switches: Switches;
 	payPalHasBegunLoading: boolean;
 	amazonPayHasBegunLoading: boolean;
-	loadPayPalExpressSdk: (
-		contributionType: ContributionType,
-	) => (dispatch: (...args: any[]) => any) => void;
+	loadPayPalExpressSdk: (contributionType: ContributionType) => void;
 	loadAmazonPaySdk: (
 		countryGroupId: CountryGroupId,
 		isTestUser: boolean,
-	) => (dispatch: (...args: any[]) => any) => void;
+	) => void;
 	checkoutFormHasBeenSubmitted: boolean;
 };
 
-/* eslint-enable react/no-unused-prop-types */
 const mapStateToProps = (state: State) => ({
 	countryId: state.common.internationalisation.countryId,
 	countryGroupId: state.common.internationalisation.countryGroupId,
@@ -97,7 +87,7 @@ const mapStateToProps = (state: State) => ({
 	existingPaymentMethods: state.common.existingPaymentMethods,
 	paymentMethod: state.page.form.paymentMethod,
 	existingPaymentMethod: state.page.form.existingPaymentMethod,
-	isTestUser: state.page.user.isTestUser || false,
+	isTestUser: state.page.user.isTestUser ?? false,
 	switches: state.common.settings.switches,
 	payPalHasBegunLoading: state.page.form.payPalData.hasBegunLoading,
 	amazonPayHasBegunLoading: state.page.form.amazonPayData.hasBegunLoading,
@@ -162,13 +152,10 @@ const renderExistingLabelAndLogo = (
 	</>
 );
 
-// having to do this nasty cast because Flow sucks and type guards don't work through .filter
 const getFullExistingPaymentMethods = (
 	props: PropTypes,
 ): RecentlySignedInExistingPaymentMethod[] =>
-	(props.existingPaymentMethods || []).filter(
-		isUsableExistingPaymentMethod,
-	) as any;
+	(props.existingPaymentMethods ?? []).filter(isUsableExistingPaymentMethod);
 
 const noPaymentMethodsErrorMessage = (
 	<GeneralErrorMessage
@@ -248,6 +235,7 @@ function PaymentMethodSelector(props: PropTypes) {
 								<AnimatedDots appearance="medium" />
 							</div>
 						)}
+
 					{contributionTypeIsRecurring(props.contributionType) &&
 						fullExistingPaymentMethods.map(
 							(
