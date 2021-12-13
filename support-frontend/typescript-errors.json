@@ -3,7 +3,7 @@
         "byCode": {
             "TS1208": 1,
             "TS2305": 50,
-            "TS2322": 181,
+            "TS2322": 177,
             "TS2578": 14,
             "TS2339": 66,
             "TS2345": 126,
@@ -17,8 +17,8 @@
             "TS2769": 14,
             "TS2314": 5,
             "TS2304": 5,
-            "TS2741": 6,
-            "TS2739": 15,
+            "TS2741": 7,
+            "TS2739": 14,
             "TS2532": 6,
             "TS2556": 3,
             "TS2554": 48,
@@ -131,7 +131,7 @@
             "assets/pages/contributions-landing/components/ContributionFormFields.tsx": 16,
             "assets/pages/contributions-landing/components/ContributionState.tsx": 2,
             "assets/pages/contributions-landing/components/ContributionTextInput.tsx": 8,
-            "assets/pages/contributions-landing/components/PaymentMethodSelector.tsx": 10,
+            "assets/pages/contributions-landing/components/PaymentMethodSelector.tsx": 6,
             "assets/pages/contributions-landing/components/SepaForm.tsx": 7,
             "assets/pages/contributions-landing/components/StripeCardForm/StripeCardFormContainer.tsx": 1,
             "assets/pages/contributions-landing/contributionsLandingReducer.ts": 5,
@@ -880,18 +880,6 @@
         },
         {
             "path": "assets/pages/contributions-landing/components/PaymentMethodSelector.tsx",
-            "message": "Type 'false | \"Please select a payment method\"' is not assignable to type 'string | undefined'."
-        },
-        {
-            "path": "assets/pages/contributions-landing/components/PaymentMethodSelector.tsx",
-            "message": "Type 'false | Element' is not assignable to type 'Element'."
-        },
-        {
-            "path": "assets/pages/contributions-landing/components/PaymentMethodSelector.tsx",
-            "message": "Type 'false | Element[]' is not assignable to type 'Element'."
-        },
-        {
-            "path": "assets/pages/contributions-landing/components/PaymentMethodSelector.tsx",
             "message": "Type 'RecentlySignedInExistingPaymentMethod' is not assignable to type 'string'."
         },
         {
@@ -901,10 +889,6 @@
         {
             "path": "assets/pages/contributions-landing/components/PaymentMethodSelector.tsx",
             "message": "Type '{ '& + div': { display: string; width: string; margin: number; justifyContent: string; }; '& + div svg': { width: string; height: string; }; '&:not(:checked) + div svg': { filter: string; }; }' is not assignable to type 'SerializedStyles | SerializedStyles[] | undefined'."
-        },
-        {
-            "path": "assets/pages/contributions-landing/components/PaymentMethodSelector.tsx",
-            "message": "Type 'false | Element | undefined' is not assignable to type 'Element'."
         },
         {
             "path": "assets/pages/contributions-landing/components/SepaForm.tsx",
@@ -2763,6 +2747,10 @@
             "message": "Property 'patrons' is missing in type '{ events: string; }' but required in type 'Record<MemProduct, string>'."
         },
         {
+            "path": "assets/pages/contributions-landing/components/PaymentMethodSelector.tsx",
+            "message": "Property 'name' is missing in type '{ children: Element; className: string; error: string; }' but required in type 'Pick<RadioGroupProps, \"label\" | \"children\" | \"id\" | \"className\" | \"name\" | \"error\" | \"cssOverrides\" | \"supporting\">'."
+        },
+        {
             "path": "assets/pages/contributions-landing/contributionsLandingReducer.ts",
             "message": "Property 'Widgets' is missing in type 'Record<string, any>' but required in type 'AmazonPaymentsObject'."
         },
@@ -2823,10 +2811,6 @@
         {
             "path": "assets/helpers/internationalisation/localCurrencyCountry.ts",
             "message": "Type '{ ONE_OFF: { min: number; minInWords: string; max: number; maxInWords: string; default: number; }; }' is missing the following properties from type 'Config': MONTHLY, ANNUAL"
-        },
-        {
-            "path": "assets/pages/contributions-landing/components/PaymentMethodSelector.tsx",
-            "message": "Type 'Element[]' is missing the following properties from type 'ReactElement<any, any>': type, props, key"
         },
         {
             "path": "assets/pages/contributions-landing/contributionsLandingReducer.ts",

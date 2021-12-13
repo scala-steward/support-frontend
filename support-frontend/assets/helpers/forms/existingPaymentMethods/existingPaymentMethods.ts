@@ -3,23 +3,28 @@ import { fetchJson } from 'helpers/async/fetch';
 import type { IsoCurrency } from 'helpers/internationalisation/currency';
 import { logException } from '../../utilities/logger';
 import { getPaymentLabel } from '../checkouts';
+import type { PaymentMethod } from '../paymentMethods';
 import {
 	DirectDebit,
 	ExistingCard,
 	ExistingDirectDebit,
 	Stripe,
 } from '../paymentMethods';
+
 // ----- Types ----- //
+
 export type ExistingPaymentMethodSubscription = {
 	isActive: boolean;
 	isCancelled: boolean;
 	name: string;
 };
+
 type ExistingPaymentType = 'Card' | 'DirectDebit';
 export type NotRecentlySignedInExistingPaymentMethod = {
 	type: 'NotRecentlySignedIn';
 	paymentType: ExistingPaymentType;
 };
+
 export type RecentlySignedInExistingPaymentMethod = {
 	type: 'RecentlySignedIn';
 	paymentType: ExistingPaymentType;
@@ -28,11 +33,13 @@ export type RecentlySignedInExistingPaymentMethod = {
 	card?: string;
 	mandate?: string;
 };
+
 export type ExistingPaymentMethod =
 	| NotRecentlySignedInExistingPaymentMethod
 	| RecentlySignedInExistingPaymentMethod;
 
 // ----- Functions ----- //
+
 function isUsableExistingPaymentMethod(
 	existingPaymentMethod: ExistingPaymentMethod,
 ): existingPaymentMethod is RecentlySignedInExistingPaymentMethod {
@@ -65,7 +72,7 @@ function sendGetExistingPaymentMethodsRequest(
 
 function mapExistingPaymentMethodToPaymentMethod(
 	existingPaymentMethod: RecentlySignedInExistingPaymentMethod,
-) {
+): PaymentMethod {
 	if (existingPaymentMethod.mandate) {
 		return ExistingDirectDebit;
 	}
@@ -91,14 +98,14 @@ function getExistingPaymentMethodLabel(
 
 function subscriptionToExplainerPart(
 	subscription: ExistingPaymentMethodSubscription,
-) {
+): string {
 	const activeOrRecentPrefix = subscription.isActive ? 'current' : 'recent';
 	return `${
 		subscription.isCancelled ? 'recently cancelled' : activeOrRecentPrefix
 	} ${subscription.name}`;
 }
 
-function subscriptionsToExplainerList(subscriptionParts: string[]) {
+function subscriptionsToExplainerList(subscriptionParts: string[]): string {
 	return subscriptionParts
 		.slice(0, -1)
 		.join(', ')
