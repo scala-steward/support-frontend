@@ -78,7 +78,7 @@ import {
 import { firstError } from 'helpers/subscriptionsForms/validation';
 import type { FormError } from 'helpers/subscriptionsForms/validation';
 import { routes } from 'helpers/urls/routes';
-import { titles } from 'helpers/user/details';
+import { titles } from 'helpers/user/personalTitles';
 import { signOut } from 'helpers/user/user';
 import {
 	formatMachineDate,

@@ -3,11 +3,11 @@ import type { Dispatch } from 'redux';
 import * as cookie from 'helpers/storage/cookie';
 import { get as getCookie } from 'helpers/storage/cookie';
 import { getSession } from 'helpers/storage/storage';
+import { trackComponentLoad } from 'helpers/tracking/behaviour';
 import type { Option } from 'helpers/types/option';
 import { getSignoutUrl } from 'helpers/urls/externalLinks';
 import { routes } from 'helpers/urls/routes';
-import { defaultUserActionFunctions } from 'helpers/user/defaultUserActionFunctions';
-import type { UserSetStateActions } from 'helpers/user/userActions';
+import { userActions } from './userReducer';
 
 export type User = {
 	firstName: Option<string>;
@@ -81,10 +81,7 @@ const getEmailValidatedFromUserCookie = (
 	return false;
 };
 
-const init = (
-	dispatch: Dispatch,
-	actions: UserSetStateActions = defaultUserActionFunctions,
-): void => {
+const init = (dispatch: Dispatch, actions = userActions): void => {
 	const {
 		setId,
 		setDisplayName,
@@ -100,7 +97,7 @@ const init = (
 		setEmailValidated,
 		setIsReturningContributor,
 	} = actions;
-	const windowHasUser = window.guardian.user;
+	const windowHasUser = window.guardian.user ?? null;
 	const userAppearsLoggedIn = doesUserAppearToBeSignedIn();
 
 	function getEmailFromBrowser(): string | null | undefined {
@@ -134,6 +131,14 @@ const init = (
 	}
 
 	if (getCookie('gu.contributions.contrib-timestamp')) {
+		const isReturningContributorOnLandingPage =
+			!!/^https:\/\/support\.\w+\.com\/\w\w\/contribute/.exec(
+				document.location.pathname,
+			);
+
+		if (isReturningContributorOnLandingPage) {
+			trackComponentLoad('returning-single-contributor-landing-page-view');
+		}
 		dispatch(setIsReturningContributor(true));
 	}
 

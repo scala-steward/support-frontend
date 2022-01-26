@@ -21,7 +21,7 @@ import type {
 } from 'helpers/internationalisation/country';
 import type { CommonState } from 'helpers/page/commonReducer';
 import * as storage from 'helpers/storage/storage';
-import { createUserReducer } from 'helpers/user/userReducer';
+import { userReducer } from 'helpers/user/userReducer';
 import type { User as UserState } from 'helpers/user/userReducer';
 import { marketingConsentReducerFor } from '../../components/marketingConsent/marketingConsentReducer';
 import type { State as MarketingConsentState } from '../../components/marketingConsent/marketingConsentReducer';
@@ -624,7 +624,7 @@ function createFormReducer() {
 function initReducer() {
 	return combineReducers({
 		form: createFormReducer(),
-		user: createUserReducer(),
+		user: userReducer,
 		directDebit,
 		csrf,
 		marketingConsent: marketingConsentReducerFor('MARKETING_CONSENT'),

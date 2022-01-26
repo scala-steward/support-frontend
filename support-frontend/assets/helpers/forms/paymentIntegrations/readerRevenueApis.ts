@@ -38,7 +38,7 @@ import type {
 import trackConversion from 'helpers/tracking/conversions';
 import type { Option } from 'helpers/types/option';
 import { routes } from 'helpers/urls/routes';
-import type { Title } from 'helpers/user/details';
+import type { Title } from 'helpers/user/personalTitles';
 import { logException } from 'helpers/utilities/logger';
 
 // ----- Types ----- //

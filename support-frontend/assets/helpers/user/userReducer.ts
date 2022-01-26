@@ -1,6 +1,8 @@
 // ----- Imports ----- //
+import type { PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 import { getUser } from './user';
-import type { Action } from './userActions';
+
 // ----- Types ----- //
 export type User = {
 	id: string | null | undefined;
@@ -20,87 +22,76 @@ export type User = {
 	address4?: string | null;
 };
 
-// ----- Reducer ----- //
-function createUserReducer(): (
-	state: User | undefined,
-	action: Action,
-) => User {
-	const userInfo = getUser();
+const userInfo = getUser();
 
-	const initialState: User = {
-		id: '',
-		email: userInfo.email ?? '',
-		displayName: '',
-		firstName: userInfo.firstName ?? '',
-		lastName: userInfo.lastName ?? '',
-		fullName: '',
-		stateField: '',
-		isTestUser: null,
-		isPostDeploymentTestUser: false,
-		gnmMarketing: false,
-		isSignedIn: userInfo.isSignedIn,
-		isRecurringContributor: false,
-		emailValidated: false,
-		isReturningContributor: false,
-	};
+const initialState: User = {
+	id: '',
+	email: userInfo.email ?? '',
+	displayName: '',
+	firstName: userInfo.firstName ?? '',
+	lastName: userInfo.lastName ?? '',
+	fullName: '',
+	stateField: '',
+	isTestUser: null,
+	isPostDeploymentTestUser: false,
+	gnmMarketing: false,
+	isSignedIn: userInfo.isSignedIn,
+	isRecurringContributor: false,
+	emailValidated: false,
+	isReturningContributor: false,
+};
 
-	return function userReducer(
-		state: User = initialState,
-		action: Action,
-	): User {
-		switch (action.type) {
-			case 'SET_USER_ID':
-				return { ...state, id: action.id };
+export const userSlice = createSlice({
+	name: 'user',
+	initialState,
+	reducers: {
+		setId(state, action: PayloadAction<string>) {
+			state.id = action.payload;
+		},
+		setDisplayName(state, action: PayloadAction<string>) {
+			state.displayName = action.payload;
+		},
+		setFirstName(state, action: PayloadAction<string>) {
+			state.firstName = action.payload;
+		},
+		setLastName(state, action: PayloadAction<string>) {
+			state.lastName = action.payload;
+		},
+		setFullName(state, action: PayloadAction<string>) {
+			state.fullName = action.payload;
+		},
+		setEmail(state, action: PayloadAction<string>) {
+			state.email = action.payload;
+		},
+		setStateField(state, action: PayloadAction<string>) {
+			state.stateField = action.payload;
+		},
+		setTestUser(state, action: PayloadAction<boolean>) {
+			state.isTestUser = action.payload;
+		},
+		setPostDeploymentTestUser(state, action: PayloadAction<boolean>) {
+			state.isPostDeploymentTestUser = action.payload;
+		},
+		setGnmMarketing(state, action: PayloadAction<boolean>) {
+			state.gnmMarketing = action.payload;
+		},
+		setEmailValidated(state, action: PayloadAction<boolean>) {
+			state.emailValidated = action.payload;
+		},
+		setIsReturningContributor(state, action: PayloadAction<boolean>) {
+			state.isRecurringContributor = action.payload;
+		},
+		setIsSignedIn(state, action: PayloadAction<boolean>) {
+			state.isSignedIn = action.payload;
+		},
+		setIsRecurringContributor(state) {
+			state.isRecurringContributor = true;
+		},
+	},
+});
 
-			case 'SET_DISPLAY_NAME':
-				return { ...state, displayName: action.name };
+export const userReducer = userSlice.reducer;
 
-			case 'SET_FIRST_NAME':
-				return { ...state, firstName: action.name };
+export const userActions = userSlice.actions;
 
-			case 'SET_LAST_NAME':
-				return { ...state, lastName: action.name };
-
-			case 'SET_FULL_NAME':
-				return { ...state, fullName: action.name };
-
-			case 'SET_TEST_USER':
-				return { ...state, isTestUser: action.testUser };
-
-			case 'SET_POST_DEPLOYMENT_TEST_USER':
-				return {
-					...state,
-					isPostDeploymentTestUser: action.postDeploymentTestUser,
-				};
-
-			case 'SET_EMAIL':
-				return { ...state, email: action.email };
-
-			case 'SET_STATEFIELD':
-				return { ...state, stateField: action.stateField };
-
-			case 'SET_GNM_MARKETING':
-				return { ...state, gnmMarketing: action.preference };
-
-			case 'SET_IS_SIGNED_IN':
-				return { ...state, isSignedIn: action.isSignedIn };
-
-			case 'SET_IS_RECURRING_CONTRIBUTOR':
-				return { ...state, isRecurringContributor: true };
-
-			case 'SET_EMAIL_VALIDATED':
-				return { ...state, emailValidated: action.emailValidated };
-
-			case 'SET_IS_RETURNING_CONTRIBUTOR':
-				return {
-					...state,
-					isReturningContributor: action.isReturningContributor,
-				};
-
-			default:
-				return state;
-		}
-	};
-}
-
-export { createUserReducer };
+export type UserActions = typeof userActions;

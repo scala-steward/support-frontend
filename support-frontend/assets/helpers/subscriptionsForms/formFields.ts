@@ -13,7 +13,7 @@ import type {
 } from 'helpers/subscriptionsForms/subscriptionCheckoutReducer';
 import type { FormError } from 'helpers/subscriptionsForms/validation';
 import type { Option } from 'helpers/types/option';
-import type { Title } from 'helpers/user/details';
+import type { Title } from 'helpers/user/personalTitles';
 
 export type Stage = 'checkout' | 'thankyou' | 'thankyou-pending';
 export type FormFields = {

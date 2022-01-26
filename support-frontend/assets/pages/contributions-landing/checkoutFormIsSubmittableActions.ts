@@ -18,13 +18,13 @@ import { AmazonPay, Sepa } from 'helpers/forms/paymentMethods';
 import { stripeCardFormIsIncomplete } from 'helpers/forms/stripe';
 import type { StateProvince } from 'helpers/internationalisation/country';
 import type { CountryGroupId } from 'helpers/internationalisation/countryGroup';
-import type { Action as UserAction } from 'helpers/user/userActions';
 import type { LocalCurrencyCountry } from '../../helpers/internationalisation/localCurrencyCountry';
 import { setFormIsValid } from './contributionsLandingActions';
 import type { Action as ContributionsLandingAction } from './contributionsLandingActions';
 import type { State } from './contributionsLandingReducer';
+
 // ----- Types ----- //
-type Action = ContributionsLandingAction | UserAction;
+type Action = ContributionsLandingAction;
 
 // ----- Functions ----- //
 const enableOrDisablePayPalExpressCheckoutButton = (

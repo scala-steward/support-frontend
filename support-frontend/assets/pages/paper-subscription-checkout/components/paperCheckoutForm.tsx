@@ -89,7 +89,7 @@ import type { FormError } from 'helpers/subscriptionsForms/validation';
 import { firstError } from 'helpers/subscriptionsForms/validation';
 import { paperSubsUrl } from 'helpers/urls/routes';
 import { getQueryParameter } from 'helpers/urls/url';
-import { titles } from 'helpers/user/details';
+import { titles } from 'helpers/user/personalTitles';
 import { signOut } from 'helpers/user/user';
 import {
 	formatMachineDate,

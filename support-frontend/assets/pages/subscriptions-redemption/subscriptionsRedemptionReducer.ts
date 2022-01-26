@@ -14,7 +14,7 @@ import type { FormError } from 'helpers/subscriptionsForms/validation';
 import type { Option } from 'helpers/types/option';
 import { getUser } from 'helpers/user/user';
 import type { User } from 'helpers/user/userReducer';
-import { createUserReducer } from 'helpers/user/userReducer';
+import { userReducer } from 'helpers/user/userReducer';
 
 export type Stage = 'form' | 'processing' | 'thankyou' | 'thankyou-pending';
 
@@ -220,7 +220,7 @@ export default (): Reducer<RedemptionFormState, Action> =>
 		readerType,
 		error,
 		csrf,
-		user: createUserReducer(),
+		user: userReducer,
 		marketingConsent,
 		checkout: createRedemptionCheckoutReducer(),
 	});

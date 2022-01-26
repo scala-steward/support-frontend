@@ -1,7 +1,7 @@
 import { stateProvinceFieldFromString } from 'helpers/internationalisation/country';
 import type { CountryGroupId } from 'helpers/internationalisation/countryGroup';
-import { defaultUserActionFunctions } from 'helpers/user/defaultUserActionFunctions';
-import type { UserSetStateActions } from 'helpers/user/userActions';
+import type { UserActions } from 'helpers/user/userReducer';
+import { userActions } from 'helpers/user/userReducer';
 import { setFormSubmissionDependentValue } from './checkoutFormIsSubmittableActions';
 
 // ----- Actions Creators ----- //
@@ -38,19 +38,17 @@ const setStateFieldSafely =
 		if (stateField) {
 			dispatch(
 				setFormSubmissionDependentValue(() => ({
-					type: 'SET_STATEFIELD',
-					stateField,
+					type: 'user/setStateField',
+					payload: stateField,
 				})),
 			);
 		}
 	};
 
-const setUserStateActions = (
-	countryGroupId: CountryGroupId,
-): UserSetStateActions => {
+const setUserStateActions = (countryGroupId: CountryGroupId): UserActions => {
 	const setStateField = setStateFieldSafely(countryGroupId);
 	return {
-		...defaultUserActionFunctions,
+		...userActions,
 		setIsSignedIn,
 		setIsRecurringContributor,
 		setStateField,

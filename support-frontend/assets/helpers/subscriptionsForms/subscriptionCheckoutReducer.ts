@@ -20,7 +20,7 @@ import type { SubscriptionProduct } from 'helpers/productPrice/subscriptions';
 import type { FormState } from 'helpers/subscriptionsForms/formFields';
 import { createFormReducer } from 'helpers/subscriptionsForms/formReducer';
 import type { Option } from 'helpers/types/option';
-import { createUserReducer } from 'helpers/user/userReducer';
+import { userReducer } from 'helpers/user/userReducer';
 
 export type CheckoutState = ReduxState<{
 	checkout: FormState;
@@ -62,7 +62,7 @@ function createReducer(
 			productOption,
 			fulfilmentOption,
 		),
-		user: createUserReducer(),
+		user: userReducer,
 		directDebit,
 		...addressReducers,
 		csrf,
