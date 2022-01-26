@@ -105,6 +105,7 @@
     "@guardian/src-text-input": "^2.1.0",
     "@guardian/src-user-feedback": "^2.7.1",
     "@guardian/src-utilities": "^0.14.0",
+    "@reduxjs/toolkit": "^1.7.1",
     "@sentry/browser": "^5.4.0",
     "@stripe/react-stripe-js": "^1.1.2",
     "@stripe/stripe-js": "^1.8.0",
