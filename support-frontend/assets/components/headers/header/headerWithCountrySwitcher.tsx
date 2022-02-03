@@ -20,17 +20,19 @@ export default function ({
 	listOfCountryGroups: CountryGroupId[];
 	trackProduct?: Option<SubscriptionProduct>;
 }) {
-	return () => (
-		<Header
-			countryGroupId={countryGroupId}
-			utility={
-				<CountryGroupSwitcher
-					countryGroupIds={listOfCountryGroups}
-					selectedCountryGroup={countryGroupId}
-					subPath={path}
-					trackProduct={trackProduct}
-				/>
-			}
-		/>
-	);
+	return function () {
+		return (
+			<Header
+				countryGroupId={countryGroupId}
+				utility={
+					<CountryGroupSwitcher
+						countryGroupIds={listOfCountryGroups}
+						selectedCountryGroup={countryGroupId}
+						subPath={path}
+						trackProduct={trackProduct}
+					/>
+				}
+			/>
+		);
+	};
 }

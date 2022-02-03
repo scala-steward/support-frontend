@@ -32,22 +32,24 @@ function getTermsConditionsLink({ product }: PromotionTerms) {
 }
 
 // ----- Render ----- //
-const PromotionTermsPage = (props: State) => (
-	<Provider store={store}>
-		<Page
-			header={<Header countryGroupId={detect()} />}
-			footer={
-				<Footer
-					termsConditionsLink={getTermsConditionsLink(
-						props.page.promotionTerms,
-					)}
-				/>
-			}
-		>
-			<PromoDetails {...props.page.promotionTerms} />
-			<LegalTerms {...props.page} />
-		</Page>
-	</Provider>
-);
+function PromotionTermsPage(props: State) {
+	return (
+		<Provider store={store}>
+			<Page
+				header={<Header countryGroupId={detect()} />}
+				footer={
+					<Footer
+						termsConditionsLink={getTermsConditionsLink(
+							props.page.promotionTerms,
+						)}
+					/>
+				}
+			>
+				<PromoDetails {...props.page.promotionTerms} />
+				<LegalTerms {...props.page} />
+			</Page>
+		</Provider>
+	);
+}
 
 renderPage(PromotionTermsPage(store.getState()), 'promotion-terms');

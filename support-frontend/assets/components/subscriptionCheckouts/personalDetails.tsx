@@ -1,9 +1,8 @@
-import { css } from '@emotion/core';
+import { css, ThemeProvider } from '@emotion/react';
 import { Button, buttonReaderRevenueBrandAlt } from '@guardian/src-button';
 import { space } from '@guardian/src-foundations';
 import { textSans } from '@guardian/src-foundations/typography';
 import { TextInput } from '@guardian/src-text-input';
-import { ThemeProvider } from 'emotion-theming';
 import React from 'react';
 import CheckoutExpander from 'components/checkoutExpander/checkoutExpander';
 import { emailRegexPattern } from 'helpers/forms/formValidation';
@@ -43,34 +42,38 @@ type SignedInEmailFooterTypes = {
 	handleSignOut: (...args: any[]) => any;
 };
 
-const SignedInEmailFooter = (props: SignedInEmailFooterTypes) => (
-	<div css={marginBottom}>
-		<CheckoutExpander copy="Want to use a different email address?">
-			<p css={sansText}>
-				You will be able to edit this in your account once you have completed
-				this checkout.
-			</p>
-		</CheckoutExpander>
-		<CheckoutExpander copy="Not you?">
-			<p css={paragraphWithButton}>
-				<ThemeProvider theme={buttonReaderRevenueBrandAlt}>
-					<Button
-						icon={null}
-						type="button"
-						onClick={(e) => props.handleSignOut(e)}
-						priority="tertiary"
-						size="small"
-					>
-						Sign out
-					</Button>{' '}
-					and create a new account.
-				</ThemeProvider>
-			</p>
-		</CheckoutExpander>
-	</div>
-);
+function SignedInEmailFooter(props: SignedInEmailFooterTypes) {
+	return (
+		<div css={marginBottom}>
+			<CheckoutExpander copy="Want to use a different email address?">
+				<p css={sansText}>
+					You will be able to edit this in your account once you have completed
+					this checkout.
+				</p>
+			</CheckoutExpander>
+			<CheckoutExpander copy="Not you?">
+				<p css={paragraphWithButton}>
+					<ThemeProvider theme={buttonReaderRevenueBrandAlt}>
+						<Button
+							icon={null}
+							type="button"
+							onClick={(e) => props.handleSignOut(e)}
+							priority="tertiary"
+							size="small"
+						>
+							Sign out
+						</Button>{' '}
+						and create a new account.
+					</ThemeProvider>
+				</p>
+			</CheckoutExpander>
+		</div>
+	);
+}
 
-const SignedOutEmailFooter = () => <div css={marginBottom} />;
+function SignedOutEmailFooter() {
+	return <div css={marginBottom} />;
+}
 
 export default function PersonalDetails(props: PropTypes) {
 	const handleSignOut = (e) => {

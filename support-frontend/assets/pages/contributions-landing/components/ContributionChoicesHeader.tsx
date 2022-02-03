@@ -1,4 +1,4 @@
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 import { space } from '@guardian/src-foundations';
 import { from } from '@guardian/src-foundations/mq';
 import { headline } from '@guardian/src-foundations/typography';
@@ -17,8 +17,10 @@ const container = css`
 	}
 `;
 
-const ContributionAmountRecurringNotification = ({
+function ContributionAmountRecurringNotification({
 	children,
-}: ContributionAmountLabelProps) => <div css={container}>{children}</div>;
+}: ContributionAmountLabelProps) {
+	return <div css={container}>{children}</div>;
+}
 
 export default ContributionAmountRecurringNotification;

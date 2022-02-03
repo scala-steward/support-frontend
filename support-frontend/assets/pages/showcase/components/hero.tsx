@@ -14,13 +14,15 @@ import HeroImg from './hero.svg';
 import { regionalContent } from './regionalContent';
 import './hero.scss';
 
-const Caption = (props: { className: string; captionText: string }) => (
-	<div className={props.className}>
-		<figcaption className="showcase-hero__caption">
-			<p>{props.captionText}</p>
-		</figcaption>
-	</div>
-);
+function Caption(props: { className: string; captionText: string }) {
+	return (
+		<div className={props.className}>
+			<figcaption className="showcase-hero__caption">
+				<p>{props.captionText}</p>
+			</figcaption>
+		</div>
+	);
+}
 
 const getCountrySelector = (countryGroupId: CountryGroupId) => {
 	switch (countryGroupId) {

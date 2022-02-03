@@ -15,11 +15,23 @@ function withLabel<
 		id: Option<string>;
 	},
 >(Component: In<Props>): Out<Props> {
-	return ({ label, optional, footer, ...props }: AugmentedProps<Props>) => (
-		<Label htmlFor={props.id} footer={footer} label={label} optional={optional}>
-			<Component {...props} />
-		</Label>
-	);
+	return function ({
+		label,
+		optional,
+		footer,
+		...props
+	}: AugmentedProps<Props>) {
+		return (
+			<Label
+				htmlFor={props.id}
+				footer={footer}
+				label={label}
+				optional={optional}
+			>
+				<Component {...props} />
+			</Label>
+		);
+	};
 }
 
 // ----- Exports ----- //

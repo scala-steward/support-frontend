@@ -1,4 +1,4 @@
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 import * as React from 'react';
 
 const expandableContainer = css`
@@ -22,20 +22,22 @@ type ExpandableContainerProps = {
 	children: React.ReactNode;
 };
 
-const ExpandableContainer = ({
+function ExpandableContainer({
 	isExpanded,
 	maxHeight,
 	children,
-}: ExpandableContainerProps) => (
-	<div
-		css={
-			isExpanded
-				? expandableContainerExpanded(maxHeight)
-				: expandableContainerCollapsed
-		}
-	>
-		{children}
-	</div>
-);
+}: ExpandableContainerProps) {
+	return (
+		<div
+			css={
+				isExpanded
+					? expandableContainerExpanded(maxHeight)
+					: expandableContainerCollapsed
+			}
+		>
+			{children}
+		</div>
+	);
+}
 
 export default ExpandableContainer;

@@ -36,10 +36,10 @@ const paperSubsFooter = (
 // ID for Selenium tests
 const pageQaId = 'qa-paper-subscriptions';
 
-const PaperLandingPage = ({
+function PaperLandingPage({
 	productPrices,
 	promotionCopy,
-}: PaperLandingPropTypes) => {
+}: PaperLandingPropTypes) {
 	const sanitisedPromoCopy = getPromotionCopy(promotionCopy);
 	const fulfilment: PaperFulfilmentOptions = window.location.pathname.includes(
 		'delivery',
@@ -101,7 +101,7 @@ const PaperLandingPage = ({
 			</FullWidthContainer>
 		</Page>
 	);
-};
+}
 
 setUpTrackingAndConsents();
 const content = <PaperLandingPage {...paperLandingProps()} />;

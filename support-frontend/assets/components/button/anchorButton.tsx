@@ -9,9 +9,9 @@ export type PropTypes = SharedButtonPropTypes & {
 	href: string;
 };
 
-const AnchorButton = (props: PropTypes) => (
-	<SharedButton element="a" {...props} />
-);
+function AnchorButton(props: PropTypes) {
+	return <SharedButton element="a" {...props} />;
+}
 
 AnchorButton.defaultProps = { ...defaultProps, 'aria-label': null };
 export default AnchorButton;

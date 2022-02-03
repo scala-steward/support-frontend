@@ -124,53 +124,58 @@ function mapDispatchToProps(dispatch: Dispatch<Action>) {
 }
 
 // ----- Component ----- //
-const DirectDebitForm = (props: PropTypes) => (
-	<div className="component-direct-debit-form">
-		<AccountHolderNameInput
-			phase={props.phase}
-			onChange={props.updateAccountHolderName}
-			value={props.accountHolderName}
-		/>
+function DirectDebitForm(props: PropTypes) {
+	return (
+		<div className="component-direct-debit-form">
+			<AccountHolderNameInput
+				phase={props.phase}
+				onChange={props.updateAccountHolderName}
+				value={props.accountHolderName}
+			/>
 
-		<AccountNumberInput
-			phase={props.phase}
-			onChange={props.updateAccountNumber}
-			value={props.accountNumber}
-		/>
+			<AccountNumberInput
+				phase={props.phase}
+				onChange={props.updateAccountNumber}
+				value={props.accountNumber}
+			/>
 
-		<SortCodeInput
-			phase={props.phase}
-			onChange={props.updateSortCode}
-			sortCodeArray={props.sortCodeArray}
-		/>
+			<SortCodeInput
+				phase={props.phase}
+				onChange={props.updateSortCode}
+				sortCodeArray={props.sortCodeArray}
+			/>
 
-		<ConfirmationInput
-			phase={props.phase}
-			onChange={props.updateAccountHolderConfirmation}
-			checked={props.accountHolderConfirmation}
-		/>
+			<ConfirmationInput
+				phase={props.phase}
+				onChange={props.updateAccountHolderConfirmation}
+				checked={props.accountHolderConfirmation}
+			/>
 
-		<PaymentButton
-			buttonText={props.buttonText}
-			phase={props.phase}
-			onPayClick={() => props.payDirectDebitClicked()}
-			onEditClick={() => props.editDirectDebitClicked()}
-			onConfirmClick={() =>
-				props.confirmDirectDebitClicked(props.onPaymentAuthorisation)
-			}
-		/>
+			<PaymentButton
+				buttonText={props.buttonText}
+				phase={props.phase}
+				onPayClick={() => props.payDirectDebitClicked()}
+				onEditClick={() => props.editDirectDebitClicked()}
+				onConfirmClick={() =>
+					props.confirmDirectDebitClicked(props.onPaymentAuthorisation)
+				}
+			/>
 
-		<ErrorMessage message={props.formError} svg={<SvgExclamationAlternate />} />
+			<ErrorMessage
+				message={props.formError}
+				svg={<SvgExclamationAlternate />}
+			/>
 
-		<LegalNotice countryGroupId={props.countryGroupId} />
+			<LegalNotice countryGroupId={props.countryGroupId} />
 
-		<DirectDebitGuarantee
-			isDDGuaranteeOpen={props.isDDGuaranteeOpen}
-			openDDGuaranteeClicked={props.openDDGuaranteeClicked}
-			closeDDGuaranteeClicked={props.closeDDGuaranteeClicked}
-		/>
-	</div>
-);
+			<DirectDebitGuarantee
+				isDDGuaranteeOpen={props.isDDGuaranteeOpen}
+				openDDGuaranteeClicked={props.openDDGuaranteeClicked}
+				closeDDGuaranteeClicked={props.closeDDGuaranteeClicked}
+			/>
+		</div>
+	);
+}
 
 // ----- Auxiliary components ----- //
 function AccountNumberInput(props: {

@@ -19,34 +19,36 @@ export type PropTypes = {
 };
 
 // ----- Component ----- //
-const MobileMenu = ({ onClose, closeButtonAt, utility, links }: PropTypes) => (
-	<div
-		className="component-header-mobile-menu"
-		style={
-			closeButtonAt && {
-				width: closeButtonAt.x,
-			}
-		}
-	>
-		<div className="component-header-mobile-menu__scroll">
-			{links}
-			{utility && (
-				<div className="component-header-mobile-menu__utility">{utility}</div>
-			)}
-		</div>
-		<VeggieBurgerButton
+function MobileMenu({ onClose, closeButtonAt, utility, links }: PropTypes) {
+	return (
+		<div
+			className="component-header-mobile-menu"
 			style={
 				closeButtonAt && {
-					top: closeButtonAt.y,
+					width: closeButtonAt.x,
 				}
 			}
-			label="close"
-			onClick={onClose}
 		>
-			<SvgClose />
-		</VeggieBurgerButton>
-	</div>
-);
+			<div className="component-header-mobile-menu__scroll">
+				{links}
+				{utility && (
+					<div className="component-header-mobile-menu__utility">{utility}</div>
+				)}
+			</div>
+			<VeggieBurgerButton
+				style={
+					closeButtonAt && {
+						top: closeButtonAt.y,
+					}
+				}
+				label="close"
+				onClick={onClose}
+			>
+				<SvgClose />
+			</VeggieBurgerButton>
+		</div>
+	);
+}
 
 MobileMenu.defaultProps = {
 	closeButtonAt: null,

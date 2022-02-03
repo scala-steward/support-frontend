@@ -32,7 +32,7 @@ type PropTypes = {
 };
 
 // ----- Render ----- //
-const Content = ({
+function Content({
 	appearance,
 	children,
 	id,
@@ -41,32 +41,34 @@ const Content = ({
 	image,
 	needsHigherZindex,
 	border,
-}: PropTypes) => (
-	<div
-		id={id}
-		className={classNameWithModifiers('component-content', [
-			appearance,
-			image ? 'overflow-hidden' : null,
-			needsHigherZindex ? 'higher' : null,
-			border === false ? 'no-border' : null,
-			border === true ? 'force-border' : null,
-			...modifierClasses,
-		])}
-	>
-		<LeftMarginSection>
-			<div
-				className={
-					innerBackground
-						? `component-content__content--${innerBackground}`
-						: 'component-content__content'
-				}
-			>
-				{children}
-				{image && <div className="component-content__image">{image}</div>}
-			</div>
-		</LeftMarginSection>
-	</div>
-);
+}: PropTypes) {
+	return (
+		<div
+			id={id}
+			className={classNameWithModifiers('component-content', [
+				appearance,
+				image ? 'overflow-hidden' : null,
+				needsHigherZindex ? 'higher' : null,
+				border === false ? 'no-border' : null,
+				border === true ? 'force-border' : null,
+				...modifierClasses,
+			])}
+		>
+			<LeftMarginSection>
+				<div
+					className={
+						innerBackground
+							? `component-content__content--${innerBackground}`
+							: 'component-content__content'
+					}
+				>
+					{children}
+					{image && <div className="component-content__image">{image}</div>}
+				</div>
+			</LeftMarginSection>
+		</div>
+	);
+}
 
 Content.defaultProps = {
 	appearance: 'white',
@@ -82,15 +84,17 @@ Content.defaultProps = {
 /*
 Adds a multiline divider between block children.
 */
-export const Divider = ({ small }: { small: boolean }) => (
-	<div
-		className={classNameWithModifiers('component-content__divider', [
-			small ? 'small' : null,
-		])}
-	>
-		<hr className="component-content__divider__line" />
-	</div>
-);
+export function Divider({ small }: { small: boolean }) {
+	return (
+		<div
+			className={classNameWithModifiers('component-content__divider', [
+				small ? 'small' : null,
+			])}
+		>
+			<hr className="component-content__divider__line" />
+		</div>
+	);
+}
 Divider.defaultProps = {
 	small: false,
 };
@@ -99,16 +103,16 @@ Divider.defaultProps = {
 Cancels out the horizontal padding
 Wrap full bleed children in this.
 */
-export const Outset = ({ children }: { children: Node }) => (
-	<div className="component-content__outset">{children}</div>
-);
+export function Outset({ children }: { children: Node }) {
+	return <div className="component-content__outset">{children}</div>;
+}
 
 /*
 A vertical block with max width
 */
-export const NarrowContent = ({ children }: { children: Node }) => (
-	<div className="component-content__narrowContent">{children}</div>
-);
+export function NarrowContent({ children }: { children: Node }) {
+	return <div className="component-content__narrowContent">{children}</div>;
+}
 
 /*
 A css class that sets the background colour to match the block.

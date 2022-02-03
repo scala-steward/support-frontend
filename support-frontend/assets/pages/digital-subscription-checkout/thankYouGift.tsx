@@ -1,5 +1,5 @@
 // ----- Imports ----- //
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 import { LinkButton } from '@guardian/src-button';
 import { space } from '@guardian/src-foundations';
 import { from } from '@guardian/src-foundations/mq';
@@ -168,11 +168,13 @@ function mapStateToProps(state: CheckoutState) {
 	};
 }
 
-const GreenCheckMark = () => (
-	<div css={greenCircle}>
-		<SvgCheckmark />
-	</div>
-);
+function GreenCheckMark() {
+	return (
+		<div css={greenCircle}>
+			<SvgCheckmark />
+		</div>
+	);
+}
 
 function ThankYouGift(props: PropTypes) {
 	const date = props.giftDeliveryDate ? new Date(props.giftDeliveryDate) : null;

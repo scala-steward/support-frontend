@@ -1,4 +1,4 @@
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 import { Button } from '@guardian/src-button';
 import { Checkbox, CheckboxGroup } from '@guardian/src-checkbox';
 import { space } from '@guardian/src-foundations';
@@ -57,11 +57,11 @@ type ContributionThankYouMarketingConsentProps = {
 	subscribeToNewsLetter: (email: string, csrf: Csrf) => void;
 };
 
-const ContributionThankYouMarketingConsent = ({
+function ContributionThankYouMarketingConsent({
 	email,
 	csrf,
 	subscribeToNewsLetter,
-}: ContributionThankYouMarketingConsentProps) => {
+}: ContributionThankYouMarketingConsentProps) {
 	const [hasConsented, setHasConsented] = useState(false);
 	const [errorMessage, setErrorMessage] = useState<string | null>(null);
 	const [hasBeenCompleted, setHasBeenCompleted] = useState(false);
@@ -149,7 +149,7 @@ const ContributionThankYouMarketingConsent = ({
 			body={actionBody}
 		/>
 	);
-};
+}
 
 export default connect(
 	mapStateToProps,

@@ -1,11 +1,11 @@
 // ----- Imports ----- //
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
+import { ThemeProvider } from '@emotion/react';
 import { buttonReaderRevenue, LinkButton } from '@guardian/src-button';
 import { space } from '@guardian/src-foundations';
 import { from } from '@guardian/src-foundations/mq';
 import { headline, textSans } from '@guardian/src-foundations/typography';
 import { SvgArrowRightStraight } from '@guardian/src-icons';
-import { ThemeProvider } from 'emotion-theming';
 import React from 'react';
 import Content from 'components/content/contentSimple';
 
@@ -39,7 +39,7 @@ const marginForButton = css`
 	margin: ${space[5]}px 0 0;
 `;
 
-const SubscriptionsSurvey = () => {
+function SubscriptionsSurvey() {
 	const surveyLink = 'https://www.surveymonkey.co.uk/r/Q37XNTV';
 	const title = 'Tell us about your subscription';
 	const message =
@@ -67,6 +67,6 @@ const SubscriptionsSurvey = () => {
 			</section>
 		</Content>
 	) : null;
-};
+}
 
 export default SubscriptionsSurvey;

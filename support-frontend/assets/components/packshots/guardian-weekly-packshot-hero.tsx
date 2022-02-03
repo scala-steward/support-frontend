@@ -1,4 +1,4 @@
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 import { from, until } from '@guardian/src-foundations/mq';
 import React from 'react';
 import GridImage from 'components/gridImage/gridImage';
@@ -29,18 +29,20 @@ const weeklyOverride = css`
 	}
 `;
 
-const GuardianWeeklyPackShotHero = () => (
-	<div className="subscriptions-feature-packshot" css={weeklyOverride}>
-		<GridImage
-			gridId="subscriptionGuardianWeeklyPackShot"
-			srcSizes={[1000, 500]}
-			sizes="(max-width: 480px) 100px,
+function GuardianWeeklyPackShotHero() {
+	return (
+		<div className="subscriptions-feature-packshot" css={weeklyOverride}>
+			<GridImage
+				gridId="subscriptionGuardianWeeklyPackShot"
+				srcSizes={[1000, 500]}
+				sizes="(max-width: 480px) 100px,
               (max-width: 740px) 100%,
               (max-width: 1067px) 150%,
               800px"
-			imgType="png"
-		/>
-	</div>
-);
+				imgType="png"
+			/>
+		</div>
+	);
+}
 
 export default GuardianWeeklyPackShotHero;

@@ -1,4 +1,4 @@
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 import { space } from '@guardian/src-foundations';
 import { until } from '@guardian/src-foundations/mq';
 import { neutral } from '@guardian/src-foundations/palette';
@@ -23,11 +23,13 @@ type PageSectionPropTypes = {
 	children: Node;
 };
 
-const PageSection = ({ children, id }: PageSectionPropTypes) => (
-	<section id={id} css={section}>
-		{children}
-	</section>
-);
+function PageSection({ children, id }: PageSectionPropTypes) {
+	return (
+		<section id={id} css={section}>
+			{children}
+		</section>
+	);
+}
 
 PageSection.defaultProps = {
 	id: '',

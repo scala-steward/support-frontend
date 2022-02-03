@@ -47,14 +47,14 @@ const reactElementId: Record<CountryGroupId, string> = {
 };
 
 // ----- Render ----- //
-const WeeklyLandingPage = ({
+function WeeklyLandingPage({
 	countryId,
 	productPrices,
 	promotionCopy,
 	orderIsAGift,
 	countryGroupId,
 	participations,
-}: WeeklyLandingPropTypes) => {
+}: WeeklyLandingPropTypes) {
 	const path = orderIsAGift
 		? routes.guardianWeeklySubscriptionLandingGift
 		: routes.guardianWeeklySubscriptionLanding;
@@ -96,13 +96,7 @@ const WeeklyLandingPage = ({
 			/>
 			<FullWidthContainer>
 				<CentredContainer>
-					<Block>
-						{orderIsAGift ? (
-							<GiftBenefits />
-						) : (
-							<Benefits/>
-						)}
-					</Block>
+					<Block>{orderIsAGift ? <GiftBenefits /> : <Benefits />}</Block>
 				</CentredContainer>
 			</FullWidthContainer>
 			<FullWidthContainer theme="dark" hasOverlap>
@@ -126,7 +120,7 @@ const WeeklyLandingPage = ({
 			</FullWidthContainer>
 		</Page>
 	);
-};
+}
 
 setUpTrackingAndConsents();
 renderPage(

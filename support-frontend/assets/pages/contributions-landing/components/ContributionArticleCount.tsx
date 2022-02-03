@@ -3,7 +3,7 @@
 /* eslint-disable react/require-default-props */
 // --- Imports --- //
 // @ts-expect-error - required for hooks
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 import { Button } from '@guardian/src-button';
 import { brand, palette, space } from '@guardian/src-foundations';
 import { from, until } from '@guardian/src-foundations/mq';
@@ -245,13 +245,13 @@ const OPHAN_COMPONENT_ID_ARTICLE_COUNT_STAY_OUT =
 const OPHAN_COMPONENT_ID_ARTICLE_COUNT_OPT_IN =
 	'contributions-epic-article-count-opt-in';
 // -- Components -- //
-export const ArticleCountWithToggle = ({
+export function ArticleCountWithToggle({
 	isArticleCountOn,
 	numArticles,
 	onToggleClick,
 	userName,
 	defaultHeaderCopy,
-}: ArticleCountWithToggleProps) => {
+}: ArticleCountWithToggleProps) {
 	if (isArticleCountOn && numArticles >= 5) {
 		return (
 			<div css={articleCountHeaderContainerStyles}>
@@ -294,8 +294,8 @@ export const ArticleCountWithToggle = ({
 	}
 
 	return null;
-};
-export const ContributionsArticleCountWithOptOut = ({
+}
+export function ContributionsArticleCountWithOptOut({
 	numArticles,
 	isArticleCountOn,
 	isMobileOnly,
@@ -303,7 +303,7 @@ export const ContributionsArticleCountWithOptOut = ({
 	onArticleCountOptIn,
 	userName,
 	defaultHeaderCopy,
-}: ContributionsArticleCountOptOutWithProps) => {
+}: ContributionsArticleCountOptOutWithProps) {
 	const [isOpen, setIsOpen] = useState(false);
 	const [consentManagementPlatform, setConsentManagementPlatform] =
 		useState(null);
@@ -433,7 +433,7 @@ export const ContributionsArticleCountWithOptOut = ({
 			)}
 		</div>
 	);
-};
+}
 export function ArticleCountHeaderCopy({
 	userName,
 	numArticles,

@@ -25,7 +25,7 @@ type PropTypes = {
 	paymentMethod: PaymentMethod;
 };
 
-const StripeCardFormContainer = (props: PropTypes) => {
+function StripeCardFormContainer(props: PropTypes) {
 	const stripeAccount =
 		stripeAccountForContributionType[props.contributionType];
 	const stripeKey = getStripeKey(
@@ -64,6 +64,6 @@ const StripeCardFormContainer = (props: PropTypes) => {
 	}
 
 	return null;
-};
+}
 
 export default StripeCardFormContainer;

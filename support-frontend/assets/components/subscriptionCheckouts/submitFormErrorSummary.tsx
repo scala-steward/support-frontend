@@ -1,5 +1,5 @@
 // ----- Imports ----- //
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 import { space } from '@guardian/src-foundations';
 import { error as errorColour } from '@guardian/src-foundations/palette';
 import { textSans } from '@guardian/src-foundations/typography';
@@ -26,15 +26,17 @@ type PropTypes = {
 	errors: Array<Record<string, any>>;
 };
 // ----- Render ----- //
-export const ErrorSummary = (props: PropTypes) => (
-	<div role="status" aria-live="assertive" css={errorContainer}>
-		<InlineError css={boldText}>Some information is missing</InlineError>
-		<ul>
-			{props.errors.map((error) => (
-				<li key={error.message} css={errorMessage}>
-					{error.message}
-				</li>
-			))}
-		</ul>
-	</div>
-);
+export function ErrorSummary(props: PropTypes) {
+	return (
+		<div role="status" aria-live="assertive" css={errorContainer}>
+			<InlineError css={boldText}>Some information is missing</InlineError>
+			<ul>
+				{props.errors.map((error) => (
+					<li key={error.message} css={errorMessage}>
+						{error.message}
+					</li>
+				))}
+			</ul>
+		</div>
+	);
+}

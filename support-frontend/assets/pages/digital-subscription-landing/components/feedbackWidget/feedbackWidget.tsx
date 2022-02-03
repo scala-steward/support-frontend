@@ -1,7 +1,7 @@
 // ----- Imports ----- //
 // @ts-expect-error - required for hooks
+import { ThemeProvider } from '@emotion/react';
 import { Button, buttonBrand, LinkButton } from '@guardian/src-button';
-import { ThemeProvider } from 'emotion-theming';
 import React, { useEffect, useState } from 'react';
 import { sendTrackingEventsOnClick } from 'helpers/productPrice/subscriptions';
 import {

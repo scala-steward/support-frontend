@@ -32,7 +32,7 @@ const mapDispatchToProps = (dispatch: (...args: any[]) => any) => ({
 		dispatch(updatePayPalButtonReady(ready)),
 });
 
-const PayPalExpressButtonComponent = (props: PropTypes) => {
+function PayPalExpressButtonComponent(props: PropTypes) {
 	// hasLoaded determines whether window.paypal is available
 	if (!props.hasLoaded) {
 		return <AnimatedDots appearance="dark" />;
@@ -59,7 +59,7 @@ const PayPalExpressButtonComponent = (props: PropTypes) => {
 		}),
 		paypalOptions,
 	);
-};
+}
 
 const PayPalExpressButton = connect(
 	null,

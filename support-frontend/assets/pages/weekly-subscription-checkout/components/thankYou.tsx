@@ -59,13 +59,13 @@ const getHeading = (billingPeriod, isPending, orderIsGift) => {
 		: `You have now subscribed to the Guardian Weekly ${packageTitle}`;
 };
 
-const StartDateCopy = ({
+function StartDateCopy({
 	startDate,
 	orderIsGift,
 }: {
 	startDate: Option<string>;
 	orderIsGift: boolean;
-}) => {
+}) {
 	if (startDate) {
 		const title = orderIsGift
 			? "The gift recipient's first issue will be published on"
@@ -78,32 +78,34 @@ const StartDateCopy = ({
 	}
 
 	return null;
-};
+}
 
-const HeroImage = ({ orderIsGift }: { orderIsGift: boolean }) => (
-	<GridPicture
-		sources={[
-			{
-				gridId: orderIsGift ? 'gwGiftingPackshot' : 'weeklyLandingHero',
-				srcSizes: [500, 1000],
-				imgType: 'png',
-				sizes: '100vw',
-				media: '(max-width: 739px)',
-			},
-			{
-				gridId: orderIsGift ? 'gwGiftingPackshot' : 'weeklyLandingHero',
-				srcSizes: [1000, 2000],
-				imgType: 'png',
-				sizes: '(min-width: 1000px) 2000px, 1000px',
-				media: '(min-width: 740px)',
-			},
-		]}
-		fallback={orderIsGift ? 'gwGiftingPackshot' : 'weeklyLandingHero'}
-		fallbackSize={1000}
-		altText="A collection of Guardian Weekly magazines"
-		fallbackImgType="png"
-	/>
-);
+function HeroImage({ orderIsGift }: { orderIsGift: boolean }) {
+	return (
+		<GridPicture
+			sources={[
+				{
+					gridId: orderIsGift ? 'gwGiftingPackshot' : 'weeklyLandingHero',
+					srcSizes: [500, 1000],
+					imgType: 'png',
+					sizes: '100vw',
+					media: '(max-width: 739px)',
+				},
+				{
+					gridId: orderIsGift ? 'gwGiftingPackshot' : 'weeklyLandingHero',
+					srcSizes: [1000, 2000],
+					imgType: 'png',
+					sizes: '(min-width: 1000px) 2000px, 1000px',
+					media: '(min-width: 740px)',
+				},
+			]}
+			fallback={orderIsGift ? 'gwGiftingPackshot' : 'weeklyLandingHero'}
+			fallbackSize={1000}
+			altText="A collection of Guardian Weekly magazines"
+			fallbackImgType="png"
+		/>
+	);
+}
 
 function ThankYouContent({
 	billingPeriod,

@@ -9,11 +9,13 @@ type Out<Props> = React.ComponentType<AugmentedProps<Props>>;
 
 // ----- Component ----- //
 function withError<Props>(Component: In<Props>): Out<Props> {
-	return ({ error, ...props }: AugmentedProps<Props>) => (
-		<Error error={error}>
-			<Component {...props} />
-		</Error>
-	);
+	return function ({ error, ...props }: AugmentedProps<Props>) {
+		return (
+			<Error error={error}>
+				<Component {...props} />
+			</Error>
+		);
+	};
 }
 
 // ----- Exports ----- //

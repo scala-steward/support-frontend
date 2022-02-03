@@ -86,7 +86,7 @@ function internationalisationID(
 }
 
 // Export
-const Links = ({ location, getRef, countryGroupId }: PropTypes) => {
+function Links({ location, getRef, countryGroupId }: PropTypes) {
 	const { protocol, host, pathname } = window.location;
 	const urlWithoutParams = `${protocol}//${host}${pathname}`;
 	return (
@@ -149,7 +149,7 @@ const Links = ({ location, getRef, countryGroupId }: PropTypes) => {
 			</ul>
 		</nav>
 	);
-};
+}
 
 Links.defaultProps = {
 	getRef: null,

@@ -1,7 +1,7 @@
 // ----- Imports ----- //
+import { ThemeProvider } from '@emotion/react';
 import { buttonBrand, LinkButton } from '@guardian/src-button';
 import { SvgArrowDownStraight } from '@guardian/src-icons';
-import { ThemeProvider } from 'emotion-theming';
 import React from 'react';
 import GiftHeadingAnimation from 'components/animations/giftHeadingAnimation';
 import CentredContainer from 'components/containers/centredContainer';
@@ -20,13 +20,15 @@ type PropTypes = {
 	countryGroupId: CountryGroupId;
 };
 
-const GiftCopy = () => (
-	<p>
-		Show that you care with the gift of a digital gift subscription. Your loved
-		ones will get the richest, ad-free experience of our independent journalism
-		and your gift will help fund our work.
-	</p>
-);
+function GiftCopy() {
+	return (
+		<p>
+			Show that you care with the gift of a digital gift subscription. Your
+			loved ones will get the richest, ad-free experience of our independent
+			journalism and your gift will help fund our work.
+		</p>
+	);
+}
 
 function HeroWithImage({ promotionCopy, countryGroupId }: PropTypes) {
 	const promoCopy = promotionHTML(promotionCopy.description, {

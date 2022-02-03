@@ -1,4 +1,4 @@
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 import { space } from '@guardian/src-foundations';
 import { from } from '@guardian/src-foundations/mq';
 import {
@@ -110,13 +110,15 @@ const borderLeft = css`
 	border-left: ${borderStyle};
 `;
 
-const Padlock = () => (
-	<div aria-label="Not included" css={[indicators, padlock, greyBackground]}>
-		<SvgPadlock />
-	</div>
-);
+function Padlock() {
+	return (
+		<div aria-label="Not included" css={[indicators, padlock, greyBackground]}>
+			<SvgPadlock />
+		</div>
+	);
+}
 
-const Checkmark = (props: { borderLeft?: Option<string> }) => {
+function Checkmark(props: { borderLeft?: Option<string> }) {
 	const checkMarkStyles = props.borderLeft
 		? [indicators, checkmark, yellowBackground, props.borderLeft]
 		: [indicators, checkmark, yellowBackground];
@@ -125,7 +127,7 @@ const Checkmark = (props: { borderLeft?: Option<string> }) => {
 			<SvgCheckmark />
 		</div>
 	);
-};
+}
 
 Checkmark.defaultProps = {
 	borderLeft: null,

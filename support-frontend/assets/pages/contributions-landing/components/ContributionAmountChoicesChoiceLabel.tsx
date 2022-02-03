@@ -1,7 +1,7 @@
 import React from 'react';
 import type { ContributionType } from 'helpers/contributions';
 import 'helpers/contributions';
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 
 type ContributionAmountLabelProps = {
 	formattedAmount: string;
@@ -9,11 +9,11 @@ type ContributionAmountLabelProps = {
 	contributionType: ContributionType;
 };
 
-const ContributionAmountChoicesChoiceLabel = ({
+function ContributionAmountChoicesChoiceLabel({
 	formattedAmount,
 	shouldShowFrequencyButtons,
 	contributionType,
-}: ContributionAmountLabelProps) => {
+}: ContributionAmountLabelProps) {
 	let frequencyLabel = '';
 
 	if (shouldShowFrequencyButtons) {
@@ -36,6 +36,6 @@ const ContributionAmountChoicesChoiceLabel = ({
 			{frequencyLabel}
 		</div>
 	);
-};
+}
 
 export default ContributionAmountChoicesChoiceLabel;

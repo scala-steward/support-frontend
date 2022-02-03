@@ -29,44 +29,46 @@ const getButtonAppearance = (isFeature, index, hierarchy) => {
 	return 'tertiary';
 };
 
-const SubscriptionsProductDescription = ({
+function SubscriptionsProductDescription({
 	title,
 	subtitle,
 	description,
 	offer,
 	isFeature,
 	buttons,
-}: PropTypes) => (
-	<div>
-		<h2 className="subscriptions__product-title">{title}</h2>
-		{offer && <h3 className="subscriptions__sales">{offer}</h3>}
-		{offer && (
-			<h3 className="subscriptions__product-subtitle--small">{subtitle}</h3>
-		)}
-		{!offer && (
-			<h3 className="subscriptions__product-subtitle--large">{subtitle}</h3>
-		)}
-		<p className="subscriptions__description">{description}</p>
-		<div
-			className={
-				isFeature
-					? 'subscriptions__button-container--feature'
-					: 'subscriptions__button-container'
-			}
-		>
-			{buttons.map((button, index) => (
-				<AnchorButton
-					href={button.link}
-					onClick={button.analyticsTracking}
-					appearance={getButtonAppearance(isFeature, index, button.hierarchy)}
-					modifierClasses={['subscriptions__product-button']}
-				>
-					{button.ctaButtonText}
-				</AnchorButton>
-			))}
+}: PropTypes) {
+	return (
+		<div>
+			<h2 className="subscriptions__product-title">{title}</h2>
+			{offer && <h3 className="subscriptions__sales">{offer}</h3>}
+			{offer && (
+				<h3 className="subscriptions__product-subtitle--small">{subtitle}</h3>
+			)}
+			{!offer && (
+				<h3 className="subscriptions__product-subtitle--large">{subtitle}</h3>
+			)}
+			<p className="subscriptions__description">{description}</p>
+			<div
+				className={
+					isFeature
+						? 'subscriptions__button-container--feature'
+						: 'subscriptions__button-container'
+				}
+			>
+				{buttons.map((button, index) => (
+					<AnchorButton
+						href={button.link}
+						onClick={button.analyticsTracking}
+						appearance={getButtonAppearance(isFeature, index, button.hierarchy)}
+						modifierClasses={['subscriptions__product-button']}
+					>
+						{button.ctaButtonText}
+					</AnchorButton>
+				))}
+			</div>
 		</div>
-	</div>
-);
+	);
+}
 
 SubscriptionsProductDescription.defaultProps = {
 	offer: null,

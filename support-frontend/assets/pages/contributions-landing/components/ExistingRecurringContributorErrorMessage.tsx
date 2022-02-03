@@ -10,7 +10,7 @@ type PropTypes = {
 	checkoutFormHasBeenSubmitted: boolean;
 };
 // ----- Component ----- //
-export const ExistingRecurringContributorErrorMessage = (props: PropTypes) => {
+export function ExistingRecurringContributorErrorMessage(props: PropTypes) {
 	const manageUrl =
 		'https://manage.theguardian.com/contributions?INTCMP=existing-contributor-from-support';
 
@@ -42,4 +42,4 @@ export const ExistingRecurringContributorErrorMessage = (props: PropTypes) => {
 			by going to your <span className="underline">account settings.</span>
 		</a>
 	);
-};
+}
